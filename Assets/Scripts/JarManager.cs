@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 public class JarManager : MonoBehaviour
@@ -21,6 +20,6 @@ public class JarManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Instantiate(ingredient, Input.mousePosition, quaternion.identity);
+        Instantiate(ingredient, Input.mousePosition, Quaternion.identity);
     }
 }
