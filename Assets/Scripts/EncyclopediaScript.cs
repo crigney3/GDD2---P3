@@ -51,7 +51,6 @@ public class EncyclopediaScript : MonoBehaviour
                 break;
             }
         }
-        Debug.Log("Active: " + activePage);
 
         if (activePage == 0) //Active page is last page
             SetPageActive(pages.Count - 1);
@@ -74,6 +73,10 @@ public class EncyclopediaScript : MonoBehaviour
             SetPageActive(activePage + 1);
     }
 
+    public void CloseEncyclopedia()
+    {
+        //TODO: Add connection to game manager to close the potion encyclopedia
+    }
 
     void ButtonDebugText()
     {
