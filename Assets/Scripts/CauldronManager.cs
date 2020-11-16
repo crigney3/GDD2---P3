@@ -6,6 +6,8 @@ using UnityEngine;
 public class CauldronManager : MonoBehaviour
 {
     public GameObject[] ingredients;
+    public Sprite noHover;
+    public Sprite hover;
 
     private bool filled;
     // Start is called before the first frame update
@@ -18,7 +20,10 @@ public class CauldronManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(filled)
+        {
+            AskToMix();
+        }
     }
 
     private void EmptyCauldron()
@@ -39,5 +44,20 @@ public class CauldronManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void AskToMix()
+    {
+        //Popup a screen asking if the player is ready to mix their potion. If it's not too hard, show what ingredients they have in the cauldron.
+    }
+
+    private void OnMouseEnter()
+    {
+        GetComponent<SpriteRenderer>().sprite = hover;
+    }
+
+    private void OnMouseExit()
+    {
+        GetComponent<SpriteRenderer>().sprite = noHover;
     }
 }
