@@ -8,11 +8,13 @@ public class IngredientManager : MonoBehaviour
     public bool carried = true;
 
     private GameObject cauldron;
+    private GameObject brazier;
     private Vector3 mousePos;
     // Start is called before the first frame update
     void Start()
     {
         cauldron = GameObject.Find("Cauldron"); //So, ALWAYS NAME THE CAULDRON "Cauldron" FOR THIS TO WORK!
+        brazier = GameObject.Find("Brazier"); //So, ALWAYS NAME THE BRAZIER "brazier" FOR THIS TO WORK!
         //TODO: Once there is art for different ingredients, change the sprite here.
     }
 
@@ -32,13 +34,14 @@ public class IngredientManager : MonoBehaviour
     {
         if (carried)
         {
-            carried = false;
-            if(cauldron.GetComponent<BoxCollider2D>().OverlapPoint(mousePos))
+            if(cauldron.GetComponent<BoxCollider2D>().OverlapPoint(mousePos)) //Put ingredient in cauldron.
             {
+                carried = false;
                 cauldron.GetComponent<CauldronManager>().AddIngredient(gameObject);
             }
-            else
+            else if(brazier.GetComponent<BoxCollider2D>().OverlapPoint(mousePos)) //Destroy object.
             {
+                carried = false;
                 Destroy(gameObject);
             }
         }
