@@ -286,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375491216722211229, guid: f960c8b270888994ea667e372adbe626, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 475
+      value: 487
       objectReference: {fileID: 0}
     - target: {fileID: 5375491216722211229, guid: f960c8b270888994ea667e372adbe626, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -294,11 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5375491216722211229, guid: f960c8b270888994ea667e372adbe626, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5375491216722211229, guid: f960c8b270888994ea667e372adbe626, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5375491216722211229, guid: f960c8b270888994ea667e372adbe626, type: 3}
       propertyPath: m_AnchorMin.x
@@ -980,7 +980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2381460497954702576, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -475
+      value: -480
       objectReference: {fileID: 0}
     - target: {fileID: 2381460497954702576, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -988,11 +988,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2381460497954702576, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2381460497954702576, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2381460497954702576, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1423,7 +1423,13 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <Add Info About the Potion Encyclopedia Here, Use Images>
+  m_Text: '<Add Info About the Potion Encyclopedia Here, Use Images>
+
+
+    Click
+    the arrow buttons to page through the entries or click on a potion''s name in
+    the sidebar to skip to that potion. Each potion''s entry will have a clue to
+    what type of ingredients it requires.'
 --- !u!222 &1082404723
 CanvasRenderer:
   m_ObjectHideFlags: 0
