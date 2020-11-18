@@ -12,6 +12,12 @@ public class GameManager : MonoBehaviour
     public State currentState;
     public State prevState;
 
+    public GameObject background;
+    public GameObject encyclopedia;
+    public GameObject brewingObjs;
+
+    LevelManager lvlManager;
+
     public static GameManager Instance { get { return _instance; } }
 
     private void Awake()
@@ -29,8 +35,16 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        background = GameObject.Find("BrewingBackground");
+        encyclopedia = GameObject.Find("EncyclopediaCover");
+        brewingObjs = GameObject.Find("BrewingObjects");
+
+        lvlManager = LevelManager.Instance;
+
         currentState = ChangeGameState(State.lvlSelect);
         prevState = ChangeGameState(State.Title);
+
+
     }
 
     // Update is called once per frame
@@ -46,28 +60,45 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case State.Title:
+                encyclopedia.SetActive(false);
+                background.SetActive(false);
+                brewingObjs.SetActive(false);
                 switchScene("TitleScene");
                 break;
             case State.lvlSelect:
-
+                encyclopedia.SetActive(false);
+                background.SetActive(false);
+                brewingObjs.SetActive(false);
                 break;
             case State.Encyclopedia:
-
+                encyclopedia.SetActive(true);
+                background.SetActive(true);
+                brewingObjs.SetActive(false);
                 break;
             case State.Ingredients:
-
+                encyclopedia.SetActive(false);
+                background.SetActive(false);
+                brewingObjs.SetActive(false);
                 break;
             case State.Brewing:
-
+                encyclopedia.SetActive(false);
+                background.SetActive(true);
+                brewingObjs.SetActive(true);
                 break;
             case State.Pause:
-
+                encyclopedia.SetActive(false);
+                background.SetActive(false);
+                brewingObjs.SetActive(false);
                 break;
             case State.Clear:
-
+                encyclopedia.SetActive(false);
+                background.SetActive(false);
+                brewingObjs.SetActive(false);
                 break;
             case State.Fail:
-
+                encyclopedia.SetActive(false);
+                background.SetActive(false);
+                brewingObjs.SetActive(false);
                 break;
             default:
                 break;

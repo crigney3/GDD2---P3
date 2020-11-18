@@ -7,6 +7,8 @@ public class LevelManager : MonoBehaviour
 
     private static LevelManager _instance;
 
+    public LevelObject activeLevel;
+
     public static LevelManager Instance { get { return _instance; } }
 
     private void Awake()
@@ -21,10 +23,18 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public List<LevelObject> levels;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        levels = new List<LevelObject>();
+        levels.Add(new LevelObject(INGREDIENT_TAG.BasicBland));
+        levels.Add(new LevelObject(INGREDIENT_TAG.Clear));
+        levels.Add(new LevelObject(INGREDIENT_TAG.BasicBland));
+        levels.Add(new LevelObject(INGREDIENT_TAG.BasicBland));
+
+        activeLevel = levels[0];
     }
 
     // Update is called once per frame
