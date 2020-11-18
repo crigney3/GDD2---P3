@@ -6,6 +6,9 @@ public class BobManager : MonoBehaviour
 {
     public Sprite noHover;
     public Sprite hover;
+    public bool overBob;
+
+    GameManager gm = GameManager.Instance;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +24,20 @@ public class BobManager : MonoBehaviour
     private void OnMouseEnter()
     {
         GetComponent<SpriteRenderer>().sprite = hover;
+        overBob = true;
     }
 
     private void OnMouseExit()
     {
         GetComponent<SpriteRenderer>().sprite = noHover;
+        overBob = false;
+    }
+
+    private void OnMouseDown()
+    {
+        if (overBob)
+        {
+            gm.ChangeGameState(GameManager.State.Encyclopedia);
+        }
     }
 }
