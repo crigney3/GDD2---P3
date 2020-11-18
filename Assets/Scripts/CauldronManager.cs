@@ -6,8 +6,11 @@ using UnityEngine;
 public class CauldronManager : MonoBehaviour
 {
     public GameObject[] ingredients;
+    public Sprite noHover;
+    public Sprite hover;
 
     private bool filled;
+    private GameObject potion;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,10 @@ public class CauldronManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(filled)
+        {
+            FillPotion();
+        }
     }
 
     private void EmptyCauldron()
@@ -39,5 +45,20 @@ public class CauldronManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void FillPotion()
+    {
+        potion.GetComponent<PotionManager>().fillPotion(ingredients);
+    }
+
+    private void OnMouseEnter()
+    {
+        GetComponent<SpriteRenderer>().sprite = hover;
+    }
+
+    private void OnMouseExit()
+    {
+        GetComponent<SpriteRenderer>().sprite = noHover;
     }
 }
