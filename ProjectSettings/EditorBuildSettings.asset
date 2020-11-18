@@ -14,7 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CreditsScene.unity
     guid: 409375e1d4f49d341874d391479fdf04
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/TitleScene.unity
-    guid: 84aa9271bf9c6b94e8073a1a318fe200
+    path: Assets/Scenes/CoreyScene.unity
+    guid: 7b843eb181756d2408b40e62336ebcbe
   m_configObjects: {}
