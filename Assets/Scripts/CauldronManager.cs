@@ -10,6 +10,7 @@ public class CauldronManager : MonoBehaviour
     public Sprite hover;
 
     private bool filled;
+    private GameObject potion;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class CauldronManager : MonoBehaviour
     {
         if(filled)
         {
-            AskToMix();
+            FillPotion();
         }
     }
 
@@ -46,9 +47,9 @@ public class CauldronManager : MonoBehaviour
         }
     }
 
-    private void AskToMix()
+    private void FillPotion()
     {
-        //Popup a screen asking if the player is ready to mix their potion. If it's not too hard, show what ingredients they have in the cauldron.
+        potion.GetComponent<PotionManager>().fillPotion(ingredients);
     }
 
     private void OnMouseEnter()
