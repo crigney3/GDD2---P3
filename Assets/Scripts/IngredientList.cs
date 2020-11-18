@@ -86,7 +86,7 @@ public class IngredientList : MonoBehaviour
         indexOfCategory[(int)currentCat] = ingredientCount;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Shadow", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Flickering Shadow", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.DarkHoly, INGREDIENT_TAG.Travel});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -122,13 +122,13 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Photo of Geese", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Photo of Goose", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.FloatLight});
         ingredients.Add(newIngredient);
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "The Color Red", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Red", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.Potent, INGREDIENT_TAG.Romance});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -153,13 +153,13 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Sigh", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "A Sigh", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.FloatLight, INGREDIENT_TAG.Romance});
         ingredients.Add(newIngredient);
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Rooster's Crow", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Rooster Crows", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.Morning, INGREDIENT_TAG.Potent, INGREDIENT_TAG.RemediesRough});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -177,7 +177,7 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Creaking Floorboards", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Floorboard Creaks", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.Travel, INGREDIENT_TAG.DarkHoly});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -189,13 +189,13 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Wolf Howling", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Wolf Howls", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.DarkHoly, INGREDIENT_TAG.Potent, INGREDIENT_TAG.Space});
         ingredients.Add(newIngredient);
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Bird Chirping", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Bird Chirps", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.FloatLight, INGREDIENT_TAG.Morning});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -269,7 +269,7 @@ public class IngredientList : MonoBehaviour
         indexOfCategory[(int)currentCat] = ingredientCount;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Bird's Feather", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Feather", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.FloatLight, INGREDIENT_TAG.Travel});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -287,7 +287,7 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Plain White Cotton", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Plain Cotton", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.BasicBland, INGREDIENT_TAG.FloatLight});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -342,13 +342,13 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Morning Doughnut", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Fresh Doughnut", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.Morning, INGREDIENT_TAG.Clear});
         ingredients.Add(newIngredient);
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Leaf of Lettuce", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Plain Lettuce", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.BasicBland});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -409,7 +409,7 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Blank Piece of Paper", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Blank Paper", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.BasicBland});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -452,7 +452,7 @@ public class IngredientList : MonoBehaviour
         indexOfCategory[(int)currentCat] = ingredientCount;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Small Broken Chain", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Broken Chain", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.Travel, INGREDIENT_TAG.DarkHoly});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -482,7 +482,7 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Musty Photograph", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Musty Photographs", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.Potent});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -515,7 +515,7 @@ public class IngredientList : MonoBehaviour
         
     }
 
-    INGREDIENT_TAG mixPotion(int[] selectedIngredients)
+    public INGREDIENT_TAG mixPotion(int[] selectedIngredients)
     {
         int[] numberTags = new int[8];
 
@@ -544,6 +544,12 @@ public class IngredientList : MonoBehaviour
             }
         }
         return returnTag;
+    }
+
+    //gives the sprite at a particular index
+    public Sprite getSprite(int index)
+    {
+        return ingredients[index].Sprite;
     }
 }
 
