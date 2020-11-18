@@ -14,9 +14,8 @@ public class EncyclopediaScript : MonoBehaviour
         SetPageActive(0);
         for(int i = 0; i < buttonList.Count; i++)
         {
-            buttonList[i].onClick.AddListener(() => SetPageActive(i));
-            buttonList[i].onClick.AddListener(ButtonDebugText);
-            buttonList[i].onClick.AddListener(delegate { ButtonDebugText(i); });
+            int page = i;
+            buttonList[page].onClick.AddListener(() => SetPageActive(page));
         }
     }
 
@@ -32,21 +31,51 @@ public class EncyclopediaScript : MonoBehaviour
         {
             pages[i].SetActive(false);
         }
+        Debug.Log("Pages Hidden");
     }
 
-    void SetPageActive(int page)
+    public void SetPageActive(int page)
     {
         HideAllPages();
         pages[page].SetActive(true);
+        Debug.Log("You have clicked button # " + page);
     }
 
-    void ButtonDebugText()
+    public void SetPrevPageActive()
     {
-        Debug.Log("You have clicked the button!");
+        int activePage = -1;
+        for (int i = 0; i < pages.Count; i++)
+        {
+            if (pages[i].activeInHierarchy)
+            {
+                activePage = i;
+                break;
+            }
+        }
+    
+        if (activePage == 0) //Active page is last page
+            SetPageActive(pages.Count - 1);
+        else if (activePage >= 0) //Active page is not last page
+            SetPageActive(activePage - 1);
+    }
+    
+    public void SetNextPageActive()
+    {
+        int activePage = -1;
+        for (int i = 0; i < pages.Count; i++)
+        {
+            if (pages[i].activeInHierarchy)
+                activePage = i;
+        }
+    
+        if (activePage == pages.Count - 1) //Active page is last page
+            SetPageActive(0);
+        else if (activePage >= 0) //Active page is not last page
+            SetPageActive(activePage + 1);
     }
 
-    void ButtonDebugText(int buttonNum)
+    public void CloseEncyclopedia()
     {
-        Debug.Log("You have clicked button # " + buttonNum);
+        //TODO: Add connection to game manager to close the potion encyclopedia
     }
 }
