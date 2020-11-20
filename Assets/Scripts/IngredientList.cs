@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IngredientList : MonoBehaviour
 {
@@ -10,9 +11,10 @@ public class IngredientList : MonoBehaviour
     private int ingredientCount;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         indexOfCategory = new int[8];
+        endOfCategory = new int[8];
         ingredients = new List<Ingredient>();
         ingredientCount = 0;
 
@@ -546,10 +548,44 @@ public class IngredientList : MonoBehaviour
         return returnTag;
     }
 
+    //sets the UI sprites for the ingredient page
+    public void setUISprites(int page, Transform ingredientSlots)
+    {
+        int start = indexOfCategory[page];
+
+        //loops through all 9 slots and sets the sprites
+        for (int i = 0; i < 9; i++) 
+        {
+            //index of the current Ingredient
+            int index = i + start;
+
+            //gets the slot for the ingredient     
+            Transform slot = ingredientSlots.GetChild(i);
+
+            //sets the sprite
+            slot.GetChild(0).GetComponent<SpriteRenderer>().sprite = getSprite(index);
+
+            //sets the text
+            slot.GetChild(1).GetComponent<Text>().text = getName(index);
+        }
+    }
+
+    //gives the index from a category and index within that category
+    public int getIndexFromCategory(int category, int index)
+    {
+        return indexOfCategory[category] + index;
+    }
+
     //gives the sprite at a particular index
     public Sprite getSprite(int index)
     {
         return ingredients[index].Sprite;
+    }
+
+    //gives the name at an index
+    public string getName(int index)
+    {
+        return ingredients[index].Name;
     }
 }
 
