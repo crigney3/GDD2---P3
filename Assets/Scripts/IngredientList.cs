@@ -112,7 +112,7 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Magazine Clipping of Meatloaf", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Picture of Meatloaf", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.RemediesRough, INGREDIENT_TAG.Potent});
         ingredients.Add(newIngredient);
         ingredientCount++;
@@ -417,7 +417,7 @@ public class IngredientList : MonoBehaviour
         ingredientCount++;
 
         newIngredient = new Ingredient();
-        newIngredient.Init(ingredientCount, "Surgeon General's Warning", currentCat, new List<INGREDIENT_TAG>()
+        newIngredient.Init(ingredientCount, "Warning Label", currentCat, new List<INGREDIENT_TAG>()
         { INGREDIENT_TAG.RemediesRough});
         ingredients.Add(newIngredient);
         ingredientCount++;
