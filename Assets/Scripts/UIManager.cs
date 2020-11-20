@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
     //Changes game to the Bedroom Screen
     public void GoToLevelSelect()
     {
-        SceneManager.LoadScene("LevelSelectScene");
+        SceneManager.LoadScene("CoreyScene");
     }
 
     //Pauses the game
