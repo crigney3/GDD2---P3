@@ -8,11 +8,11 @@ public class BobManager : MonoBehaviour
     public Sprite hover;
     public bool overBob;
 
-    GameManager gm = GameManager.Instance;
+    static GameManager gm = GameManager.Instance;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class BobManager : MonoBehaviour
     {
         if (overBob)
         {
-            gm.ChangeGameState(GameManager.State.Encyclopedia);
+            GameManager.Instance.ButtonGameState("Encyclopedia");
         }
     }
 }

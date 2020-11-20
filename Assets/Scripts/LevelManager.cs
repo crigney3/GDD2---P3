@@ -31,8 +31,9 @@ public class LevelManager : MonoBehaviour
         levels = new List<LevelObject>();
         levels.Add(new LevelObject(INGREDIENT_TAG.BasicBland));
         levels.Add(new LevelObject(INGREDIENT_TAG.Clear));
-        levels.Add(new LevelObject(INGREDIENT_TAG.BasicBland));
-        levels.Add(new LevelObject(INGREDIENT_TAG.BasicBland));
+        levels.Add(new LevelObject(INGREDIENT_TAG.DarkHoly));
+        levels.Add(new LevelObject(INGREDIENT_TAG.FloatLight));
+        levels.Add(new LevelObject(INGREDIENT_TAG.Morning));
 
         activeLevel = levels[0];
     }

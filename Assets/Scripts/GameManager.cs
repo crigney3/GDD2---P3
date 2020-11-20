@@ -168,6 +168,12 @@ public class GameManager : MonoBehaviour
         currentState = ChangeGameState(prePauseState);
     }
 
+    public void LevelButton(int levelID)
+    {
+        lvlManager.activeLevel = lvlManager.levels[levelID];
+        currentState = ChangeGameState(State.Brewing);
+    }
+
     public void switchScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
