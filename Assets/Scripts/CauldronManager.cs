@@ -16,6 +16,7 @@ public class CauldronManager : MonoBehaviour
     {
         ingredients = new GameObject[8]; //Can only have a max of 8 ingredients.
         filled = false;
+        potion = GameObject.Find("Potion");
     }
 
     // Update is called once per frame

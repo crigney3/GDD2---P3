@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public enum State { Title, lvlSelect, Encyclopedia, Ingredients, Brewing, Pause, Fail, Clear};
+    public enum State { Title, lvlSelect, Game, Pause, PotionCheck, Ingredients, Encyclopedia};
 
     private static GameManager _instance;
 

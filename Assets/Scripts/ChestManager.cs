@@ -22,7 +22,7 @@ public class ChestManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        OpenIngredientScreen();
+        //Open ingredient screen here.
         //ingredient = Instantiate(ingredient, Input.mousePosition, Quaternion.identity);
         //ingredient.GetComponent<IngredientManager>().ingredientType = itemValue;
     }
@@ -35,10 +35,5 @@ public class ChestManager : MonoBehaviour
     private void OnMouseExit()
     {
         GetComponent<SpriteRenderer>().sprite = noHover;
-    }
-
-    private void OpenIngredientScreen()
-    {
-
     }
 }
