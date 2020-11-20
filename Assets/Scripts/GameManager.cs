@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public enum State { Title, lvlSelect, Game, Pause, Fail, Clear};
+    public enum State { Title, lvlSelect, Game, Pause, PotionCheck, Ingredients, Encyclopedia};
 
     private static GameManager _instance;
 
