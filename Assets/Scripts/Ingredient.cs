@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ingredient : MonoBehaviour
+public class Ingredient
 {
     private int ID = 0;
     private string ingredientName = "none";
@@ -13,12 +13,7 @@ public class Ingredient : MonoBehaviour
     //accessors
     public List<INGREDIENT_TAG> Tags => tags;
     public Sprite Sprite => sprite;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string Name => ingredientName;
 
     public void Init(int newID, string newIngredientName, INGREDIENT_CATEGORY newCategory, List<INGREDIENT_TAG> newTags)
     {
@@ -28,11 +23,5 @@ public class Ingredient : MonoBehaviour
         category = newCategory;
         tags = newTags;
         sprite = Resources.Load<Sprite>(category.ToString() + "/" + ingredientName);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
