@@ -15,25 +15,6 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    /*//Shows the first child of a cyclable object and hides the remaining children
-    public void resetCycle(GameObject obj)
-    {
-        List<GameObject> children = new List<GameObject>();
-        bool firstChild = true;
-
-        foreach (Transform transform in obj.transform) //Adds all children to list
-        {
-            if (firstChild)
-            {
-                transform.gameObject.SetActive(true);
-                firstChild = false;
-            }
-            else
-                transform.gameObject.SetActive(false);
-        }
-    }*/
-
-
     //Changes game to the Title Screen
     public void GoToTitle()
     {
