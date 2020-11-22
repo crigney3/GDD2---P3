@@ -124,3 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ingredientType: 0
   carried: 1
+  ingredientList: {fileID: 1798541514701689580, guid: 6b8b608a817c22c468e9f8610ff06ccd, type: 3}
