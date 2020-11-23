@@ -32,32 +32,26 @@ public class IngredientManager : MonoBehaviour
             mousePos = Camera.main.ScreenToWorldPoint(mousePos);
 
             transform.position = new Vector3(mousePos.x, mousePos.y, 650.0f);
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                checkCollision();
+            }
         }
     }
 
-    public void OnMouseDown()
+    public void checkCollision()
     {
-        //if (carried)
-        //{
-            if (cauldron.GetComponent<CauldronManager>().hovering)
-            {
-                carried = false;
-                cauldron.GetComponent<CauldronManager>().AddIngredient(gameObject);
-            } else if (brazier.GetComponent<BrazierManager>().hovering)
-            {
-                carried = false;
-                Destroy(gameObject);
-            }
-            /*if (cauldron.GetComponent<BoxCollider2D>().OverlapPoint(mousePos)) //Put ingredient in cauldron.
-            {
-                carried = false;
-                cauldron.GetComponent<CauldronManager>().AddIngredient(gameObject);
-            }
-            else if(brazier.GetComponent<BoxCollider2D>().OverlapPoint(mousePos)) //Destroy object.
-            {
-                carried = false;
-                Destroy(gameObject);
-            }*/
-        //}
+        if (cauldron.GetComponent<BoxCollider2D>().OverlapPoint(mousePos)) //Put ingredient in cauldron.
+        {
+            carried = false;
+            cauldron.GetComponent<CauldronManager>().AddIngredient(gameObject);
+        }
+        else if(brazier.GetComponent<BoxCollider2D>().OverlapPoint(mousePos)) //Destroy object.
+        {
+            carried = false;
+            Destroy(gameObject);
+        }
+        
     }
 }
