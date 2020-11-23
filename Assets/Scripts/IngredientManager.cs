@@ -7,15 +7,18 @@ public class IngredientManager : MonoBehaviour
     public int ingredientType;
     public bool carried = true;
 
+    private GameObject ingredientList;
     private GameObject cauldron;
     private GameObject brazier;
     private Vector3 mousePos;
     // Start is called before the first frame update
     void Start()
     {
+        ingredientList = GameObject.Find("IngredientListManager"); //So, ALWAYS NAME THE INGREDIENT LIST MANAGER "IngredientListManager" FOR THIS TO WORK!
         cauldron = GameObject.Find("Cauldron"); //So, ALWAYS NAME THE CAULDRON "Cauldron" FOR THIS TO WORK!
         brazier = GameObject.Find("Brazier"); //So, ALWAYS NAME THE BRAZIER "brazier" FOR THIS TO WORK!
-        //TODO: Once there is art for different ingredients, change the sprite here.
+        //Set sprite.
+        GetComponent<SpriteRenderer>().sprite = ingredientList.GetComponent<IngredientList>().getSprite(ingredientType);
     }
 
     // Update is called once per frame
