@@ -40,8 +40,8 @@ public class PotionManager : MonoBehaviour
         this.ingredients = ingredients;
         filled = true;
         GetComponent<SpriteRenderer>().sprite = noHoverFull;
-        GameObject.Find("AdvanceButton").SetActive(true); //Enable potion checking button.
-        GameObject.Find("ResetPotion").SetActive(true); //Enable potion dumping button.
+        //GameObject.Find("AdvanceButton").SetActive(true); //Enable potion checking button.
+        //GameObject.Find("ResetPotion").SetActive(true); //Enable potion dumping button.
     }
 
     private void OnMouseExit()
