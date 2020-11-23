@@ -10,12 +10,11 @@ public class IngredientPage : MonoBehaviour
 
     private IngredientList ingredientList;
     private int activePage;
-    private GameObject chest;
+    public GameObject chest;
 
     // Start is called before the first frame update
     void Start()
     {
-        chest = GameObject.Find("Chest");
         ingredientList = GameObject.Find("Ingredient List Manager").GetComponent<IngredientList>();
 
         SetPageActive(0);
@@ -77,11 +76,12 @@ public class IngredientPage : MonoBehaviour
         index = ingredientList.getIndexFromCategory(activePage, index);
 
         chest.GetComponent<ChestManager>().MakeIngredient(index);
-        Debug.Log(index);
+        GameManager.Instance.currentState = GameManager.Instance.ChangeGameState(GameManager.State.Brewing);
     }
 
     public void CloseEncyclopedia()
     {
         //TODO: Add connection to game manager to close the potion encyclopedia
+        GameManager.Instance.currentState = GameManager.Instance.ChangeGameState(GameManager.State.Brewing);
     }
 }

@@ -23,8 +23,9 @@ public class ChestManager : MonoBehaviour
     private void OnMouseDown()
     {
         //Open ingredient screen here.
-        ingredient = Instantiate(ingredient, Input.mousePosition, Quaternion.identity);
-        ingredient.GetComponent<IngredientManager>().ingredientType = itemValue;
+        GameManager.Instance.currentState = GameManager.Instance.ChangeGameState(GameManager.State.Ingredients);
+        //ingredient = Instantiate(ingredient, Input.mousePosition, Quaternion.identity);
+        //ingredient.GetComponent<IngredientManager>().ingredientType = itemValue;
     }
 
     private void OnMouseEnter()
