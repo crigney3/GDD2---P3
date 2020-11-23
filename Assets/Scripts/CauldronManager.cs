@@ -11,11 +11,13 @@ public class CauldronManager : MonoBehaviour
 
     private bool filled;
     private GameObject potion;
+    public bool hovering;
     // Start is called before the first frame update
     void Start()
     {
         ingredients = new GameObject[8]; //Can only have a max of 8 ingredients.
         filled = false;
+        hovering = false;
         potion = GameObject.Find("Potion");
     }
 
@@ -46,6 +48,10 @@ public class CauldronManager : MonoBehaviour
                 }
             }
         }
+        if (!filled)
+        {
+            Destroy(ingredient);
+        }
     }
 
     private void FillPotion()
@@ -56,10 +62,12 @@ public class CauldronManager : MonoBehaviour
     private void OnMouseEnter()
     {
         GetComponent<SpriteRenderer>().sprite = hover;
+        hovering = true;
     }
 
     private void OnMouseExit()
     {
         GetComponent<SpriteRenderer>().sprite = noHover;
+        hovering = false;
     }
 }

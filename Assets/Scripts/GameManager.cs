@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
                 break;
             case State.Ingredients:
                 encyclopedia.SetActive(false);
-                background.SetActive(false);
+                background.SetActive(true);
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
