@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 229843218268245311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 240, y: 419, z: -218.21964}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8c333f6b95f1a1141ae1b0d6730add20, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1bab3c9d837ec0b4ca8ff3b994ea99c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64ce72c39c76d94abf7e9bd1c2b5c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noHover: {fileID: 0}
-  hover: {fileID: 0}
+  noHover: {fileID: 21300000, guid: 1bab3c9d837ec0b4ca8ff3b994ea99c8, type: 3}
+  hover: {fileID: 21300000, guid: cecd13a492ab36849afbb287969e468e, type: 3}
 --- !u!61 &-6451749369645321535
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -111,16 +111,16 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.014405489, y: 0.3169167}
+  m_Offset: {x: 0.014405251, y: 0.72963}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 10.68, y: 9.32}
+    oldSize: {x: 9.22, y: 8.13}
     newSize: {x: 10.68, y: 9.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.959734, y: 7.994718}
+  m_Size: {x: 7.4284353, y: 6.2338104}
   m_EdgeRadius: 0
