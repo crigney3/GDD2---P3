@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public enum State { Title, lvlSelect, Game, Pause, PotionCheck, Ingredients, Encyclopedia};
+    public enum State { Title, lvlSelect, Game, Pause, Brewing, PotionCheck, Ingredients, Encyclopedia, Clear, Fail};
 
     private static GameManager _instance;
 
@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public GameObject brewingObjs;
     public GameObject lvlObjs;
     public GameObject pauseObjs;
+    public GameObject ingredientsObjs;
 
     LevelManager lvlManager;
 
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         brewingObjs = GameObject.Find("BrewingObjects");
         lvlObjs = GameObject.Find("LevelSelectObjects");
         pauseObjs = GameObject.Find("PauseObjects");
+        ingredientsObjs = GameObject.Find("Ingredients");
 
         lvlManager = LevelManager.Instance;
 
@@ -71,6 +73,7 @@ public class GameManager : MonoBehaviour
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(false);
                 switchScene("TitleScene");
                 break;
             case State.lvlSelect:
@@ -79,6 +82,7 @@ public class GameManager : MonoBehaviour
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(true);
                 pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(false);
                 break;
             case State.Encyclopedia:
                 encyclopedia.SetActive(true);
@@ -86,6 +90,7 @@ public class GameManager : MonoBehaviour
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(false);
                 break;
             case State.Ingredients:
                 encyclopedia.SetActive(false);
@@ -93,6 +98,7 @@ public class GameManager : MonoBehaviour
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(true);
                 break;
             case State.Brewing:
                 encyclopedia.SetActive(false);
@@ -100,6 +106,7 @@ public class GameManager : MonoBehaviour
                 brewingObjs.SetActive(true);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(false);
                 break;
             case State.Pause:
                 encyclopedia.SetActive(false);
@@ -107,6 +114,7 @@ public class GameManager : MonoBehaviour
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(true);
+                ingredientsObjs.SetActive(false);
 
                 prePauseState = currentState;
                 break;
@@ -116,6 +124,7 @@ public class GameManager : MonoBehaviour
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(false);
                 break;
             case State.Fail:
                 encyclopedia.SetActive(false);
@@ -123,6 +132,7 @@ public class GameManager : MonoBehaviour
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(false);
                 break;
             default:
                 break;

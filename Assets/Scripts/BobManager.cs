@@ -21,11 +21,6 @@ public class BobManager : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
-    {
-        //Open encyclopedia here.
-    }
-
     private void OnMouseEnter()
     {
         GetComponent<SpriteRenderer>().sprite = hover;
