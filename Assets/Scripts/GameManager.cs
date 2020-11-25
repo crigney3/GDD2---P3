@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public GameObject lvlObjs;
     public GameObject pauseObjs;
     public GameObject ingredientsObjs;
+    public GameObject gameOverObjs;
 
     LevelManager lvlManager;
 
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
         lvlObjs = GameObject.Find("LevelSelectObjects");
         pauseObjs = GameObject.Find("PauseObjects");
         ingredientsObjs = GameObject.Find("Ingredients");
+        gameOverObjs = GameObject.Find("GameOverObjs");
 
         lvlManager = LevelManager.Instance;
 

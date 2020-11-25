@@ -13,7 +13,7 @@ public class PotionCheck : MonoBehaviour
     void Start()
     {
         potion = GameObject.Find("Potion");
-        ingredientList = GameObject.Find("IngredientListManager");
+        ingredientList = GameObject.Find("Ingredient List Manager");
         potionType = ingredientList.GetComponent<IngredientList>().mixPotion(potion.GetComponent<PotionManager>().getIngredientIndexes());
 
         success = LevelManager.Instance.activeLevel.checkWin(potionType);
@@ -36,8 +36,6 @@ public class PotionCheck : MonoBehaviour
 
     public void CheckPotion()
     {
-        potion = GameObject.Find("Potion");
-        ingredientList = GameObject.Find("IngredientListManager");
         potionType = ingredientList.GetComponent<IngredientList>().mixPotion(potion.GetComponent<PotionManager>().getIngredientIndexes());
 
         success = LevelManager.Instance.activeLevel.checkWin(potionType);
