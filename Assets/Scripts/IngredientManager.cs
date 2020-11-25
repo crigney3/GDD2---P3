@@ -16,7 +16,7 @@ public class IngredientManager : MonoBehaviour
     {
         ingredientList = GameObject.Find("Ingredient List Manager"); //So, ALWAYS NAME THE INGREDIENT LIST MANAGER "IngredientListManager" FOR THIS TO WORK!
         cauldron = GameObject.Find("Cauldron"); //So, ALWAYS NAME THE CAULDRON "Cauldron" FOR THIS TO WORK!
-        brazier = GameObject.Find("Brazier"); //So, ALWAYS NAME THE BRAZIER "brazier" FOR THIS TO WORK!
+        brazier = GameObject.Find("Brazier"); //So, ALWAYS NAME THE BRAZIER "Brazier" FOR THIS TO WORK!
         //Set sprite.
         SpriteRenderer spriteRend = GetComponent<SpriteRenderer>();
         spriteRend.sprite = ingredientList.GetComponent<IngredientList>().getSprite(ingredientType);
