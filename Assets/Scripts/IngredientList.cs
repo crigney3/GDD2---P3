@@ -515,12 +515,6 @@ public class IngredientList : MonoBehaviour
         #endregion
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public INGREDIENT_TAG mixPotion(int[] selectedIngredients)
     {
         int[] numberTags = new int[8];
@@ -537,13 +531,13 @@ public class IngredientList : MonoBehaviour
             }
         }
 
-        //return the type of tag that there is the most of
-        INGREDIENT_TAG returnTag = INGREDIENT_TAG.BasicBland;
-        int returnCount = 0;
+        //return the type of tag that there is the most of, minimum of 6
+        INGREDIENT_TAG returnTag = INGREDIENT_TAG.Botched;
+        int returnCount = 6;
         for (int i = 0; i < numberTags.Length; i++) 
         {
             //find the new greatest
-            if(numberTags[i] > returnCount)
+            if(numberTags[i] >= returnCount)
             {
                 returnCount = numberTags[i];
                 returnTag = (INGREDIENT_TAG)i;
@@ -594,4 +588,4 @@ public class IngredientList : MonoBehaviour
 }
 
 public enum INGREDIENT_CATEGORY { Base, Sight, Sound, Smell, Touch, Taste, Mind, Spirit};
-public enum INGREDIENT_TAG { Travel, Romance, Morning, BasicBland, RemediesRough, Space, Clear, FloatLight, Potent, DarkHoly};
+public enum INGREDIENT_TAG { Travel, Romance, Morning, BasicBland, RemediesRough, Space, Clear, FloatLight, Potent, DarkHoly, Botched = -1};

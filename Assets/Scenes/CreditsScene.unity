@@ -160,6 +160,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &82809169 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+  m_PrefabInstance: {fileID: 906069101}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77196f9da48e5104398e7b6076834aa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &167507280
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,7 +217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2670190525660628438, guid: f960c8b270888994ea667e372adbe626, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2670190525660628438, guid: f960c8b270888994ea667e372adbe626, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -236,6 +247,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 372987948}
+    - target: {fileID: 2670190525660628438, guid: f960c8b270888994ea667e372adbe626, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670190525660628438, guid: f960c8b270888994ea667e372adbe626, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670190525660628438, guid: f960c8b270888994ea667e372adbe626, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670190525660628438, guid: f960c8b270888994ea667e372adbe626, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 82809169}
+    - target: {fileID: 2670190525660628438, guid: f960c8b270888994ea667e372adbe626, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 2670190525660628438, guid: f960c8b270888994ea667e372adbe626, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3263340318315910951, guid: f960c8b270888994ea667e372adbe626, type: 3}
       propertyPath: m_Name
       value: Next Button
@@ -575,7 +610,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Assets - 2
+  m_Text: Assets - Page 2
 --- !u!222 &411345621
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -691,7 +726,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <Add Second Page of References to Assets Used Here>
+  m_Text: "Desai, S. (2020). Alchemy Lab. ArtStation. \n\t\thttps://www.artstation.com/artwork/L2Q19K\r\n\nFree
+    Game Assets (GUI, Sprite, Tilesets). (2018). Free Game Icons \n\t\tPotions. Itch.Io.
+    https://free-game-assets.itch.io/\n\t\tfree-game-icons-potions\r\n\nHitrision.
+    (2018). Menu Sound FX Pack + More! Itch.Io. \n\t\thttps://hitrison.itch.io/menu-sfx-pack\r\n\nJain,
+    P. (2020). Magical Skull. ArtStation. \n\t\thttps://www.artstation.com/artwork/kDDWe0\r\n\nMaySama.
+    (2020). Daily Life Sound Effects Asset Pack. Itch.Io. \n\t\thttps://maysama.itch.io/homesoundeffects"
 --- !u!222 &574243379
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -734,8 +774,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 800, y: 400}
+  m_AnchoredPosition: {x: 0, y: -45}
+  m_SizeDelta: {x: 800, y: 410}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &608620284
 MonoBehaviour:
@@ -770,9 +810,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Triton Adamski\t\t\t\t\t\tAssets and UI Design\n\nJohn  Hayes\t\t\t\t\t\t\tPotion
-    Screen And Mixing\n\nSijal Jaradat\t\t\t\t\t\t\tPotion Encyclopedia\n\nFisher
-    Meddaugh\t\t\t\t\tIngredients\n\nCorey Rigney\t\t\t\t\t\tGame Loop and Integration"
+  m_Text: "Triton Adamski:\t\t\t\t\t\tAudio, Art, and UI Design\n\nJohn Hayes:\t\t\t\t\t\t\tMain
+    Game Screen And \n\t\t\t\t\t\t\t\t\t\t\tPotion Brewing\n\nSijal Jaradat:\t\t\t\t\t\tPotion
+    Encyclopedia\n\nFisher Meddaugh:\t\t\t\t\tIngredients Screen and \n\t\t\t\t\t\t\t\t\t\t\tPotion
+    Brewing\n\nCorey Rigney:\t\t\t\t\t\tMain Game Loop and \n\t\t\t\t\t\t\t\t\t\t\tFeature
+    Integration"
 --- !u!222 &608620285
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -851,7 +893,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Assets - 3
+  m_Text: Assets - Page 3
 --- !u!222 &657976599
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -930,7 +972,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <Add First Page of References to Assets Used Here>
+  m_Text: "Beard, C. (2018). Potion Station. ArtStation. \n\t\thttps://www.artstation.com/artwork/Dr5Ao\r\n\nBillmann,
+    M. (2016). Potions. ArtStation. \n\t\thttps://www.artstation.com/artwork/0rmyE\r\n\nBona,
+    M. D. (2020). Small parts organizer. ArtStation. \n\t\thttps://www.artstation.com/artwork/qAkdR2\r\n\nCecot,
+    M. (2015). Alchemy Table\u20143D game model. ArtStation. \n\t\thttps://www.artstation.com/artwork/R5eVm\r\n\nChoi,
+    D. (2020). Room Escape VR. Altar of Sun [ Brazier ]. ArtStation. \n\t\thttps://www.artstation.com/artwork/XBkV2Y\n\r\nColor
+    Icons. (n.d.). Icons8. https://icons8.com/icons/color"
 --- !u!222 &658630761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1101,7 +1148,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1820221139662791115, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1820221139662791115, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1131,6 +1178,30 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
       objectReference: {fileID: 372987948}
+    - target: {fileID: 1820221139662791115, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820221139662791115, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820221139662791115, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820221139662791115, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 82809169}
+    - target: {fileID: 1820221139662791115, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1820221139662791115, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2381460497954702576, guid: e2ec6888f66eabe4a824150ae6caddc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1226,6 +1297,91 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5375491216722211229, guid: f960c8b270888994ea667e372adbe626, type: 3}
   m_PrefabInstance: {fileID: 239282828}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &906069101
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: bgmClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: fxClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: bgmVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: fxVolume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: bgmClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2b714cc3f76af8d469ffd2a66dc9b2f1, type: 3}
+    - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: fxClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 19ba57d5370feb849b97a9bcb8bee9fa, type: 3}
+    - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: fxClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: dbfb12931d321b84fa64786895421913, type: 3}
+    - target: {fileID: 4257998893788121911, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257998893788121929, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 807a3fa184184b44792758401ca932f8, type: 3}
 --- !u!224 &938057918 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3355084580907028480, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
@@ -1386,8 +1542,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -40}
-  m_SizeDelta: {x: 800, y: 400}
+  m_AnchoredPosition: {x: 0, y: -45}
+  m_SizeDelta: {x: 800, y: 410}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1082404722
 MonoBehaviour:
@@ -1422,7 +1578,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <Add Third Page of References to Assets Used Here>
+  m_Text: "Nayrissa. (2018). Simple Fantasy GUI. Unity Asset Store. \n\t\thttps://assetstore.unity.com/packages/2d/gui/\n\t\tsimple-fantasy-gui-99451\r\n\nOrtega,
+    M. (2018). Tileable Hand-Painted Stone Wall. ArtStation. \n\t\thttps://www.artstation.com/artwork/GXkV1Q\r\n\nPantic,
+    M. (2020). Elemental Potions. Unity Asset Store.\n\t\thttps://assetstore.unity.com/packages/2d/gui/icons/\n\t\telemental-potions-175338\r\nTallbeard
+    Studios. (2020). [Music Assets] FREE Music Loop Bundle. \n\t\tItch.Io. https://tallbeard.itch.io/music-loop-bundle\r\n\nTim.
+    (2018). Global Game Jam 2018 SFX Bundle. Itch.Io. \n\t\thttps://timothyadan.itch.io/global-game-jam-2018-sfx-bundle"
 --- !u!222 &1082404723
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1786,7 +1946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Assets - 1
+  m_Text: Assets - Page 1
 --- !u!222 &2061698180
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1804,7 +1964,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1829,6 +1989,34 @@ PrefabInstance:
     - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 82809169}
+    - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1964004952836326615, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3355084580907028480, guid: 8d4f03f989651bf4eb5816eea194d767, type: 3}
       propertyPath: m_LocalPosition.x
