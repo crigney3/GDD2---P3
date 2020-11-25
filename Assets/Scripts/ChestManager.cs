@@ -5,13 +5,15 @@ using UnityEngine;
 public class ChestManager : MonoBehaviour
 {
     public int itemValue;
+    public Transform ingredientT;
     public Transform ingredient;
     public Sprite noHover;
     public Sprite hover;
+    private GameObject ingStorage;
     // Start is called before the first frame update
     void Start()
     {
-
+        ingStorage = GameObject.Find("IngredientsStorage");
     }
 
     // Update is called once per frame
@@ -22,7 +24,8 @@ public class ChestManager : MonoBehaviour
 
     private void OnMouseDown()
     {
-        OpenIngredientScreen();
+        //Open ingredient screen here.
+        GameManager.Instance.currentState = GameManager.Instance.ChangeGameState(GameManager.State.Ingredients);
         //ingredient = Instantiate(ingredient, Input.mousePosition, Quaternion.identity);
         //ingredient.GetComponent<IngredientManager>().ingredientType = itemValue;
     }
@@ -37,8 +40,10 @@ public class ChestManager : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = noHover;
     }
 
-    private void OpenIngredientScreen()
+    public void MakeIngredient(int index)
     {
-
+        ingredient = Instantiate(ingredientT, Input.mousePosition, Quaternion.identity);
+        ingredient.GetComponent<IngredientManager>().ingredientType = index;
+        ingredient.transform.parent = ingStorage.transform;
     }
 }
