@@ -36,6 +36,8 @@ public class PotionCheck : MonoBehaviour
 
     public void CheckPotion()
     {
+        GameManager.Instance.ChangeGameState(GameManager.State.PotionCheck);
+
         potionType = ingredientList.GetComponent<IngredientList>().mixPotion(potion.GetComponent<PotionManager>().getIngredientIndexes());
 
         success = LevelManager.Instance.activeLevel.checkWin(potionType);

@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
         lvlObjs = GameObject.Find("LevelSelectObjects");
         pauseObjs = GameObject.Find("PauseObjects");
         ingredientsObjs = GameObject.Find("Ingredients");
-        gameOverObjs = GameObject.Find("GameOverObjs");
+        gameOverObjs = GameObject.Find("GameOverObjects");
 
         lvlManager = LevelManager.Instance;
 
@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
+                gameOverObjs.SetActive(false);
                 switchScene("TitleScene");
                 break;
             case State.lvlSelect:
@@ -85,6 +86,7 @@ public class GameManager : MonoBehaviour
                 lvlObjs.SetActive(true);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
+                gameOverObjs.SetActive(false);
                 break;
             case State.Encyclopedia:
                 encyclopedia.SetActive(true);
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
+                gameOverObjs.SetActive(false);
                 break;
             case State.Ingredients:
                 encyclopedia.SetActive(false);
@@ -101,6 +104,7 @@ public class GameManager : MonoBehaviour
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(true);
+                gameOverObjs.SetActive(false);
                 break;
             case State.Brewing:
                 encyclopedia.SetActive(false);
@@ -109,6 +113,7 @@ public class GameManager : MonoBehaviour
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
+                gameOverObjs.SetActive(false);
                 break;
             case State.Pause:
                 encyclopedia.SetActive(false);
@@ -117,8 +122,18 @@ public class GameManager : MonoBehaviour
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(true);
                 ingredientsObjs.SetActive(false);
+                gameOverObjs.SetActive(false);
 
                 prePauseState = currentState;
+                break;
+            case State.PotionCheck:
+                encyclopedia.SetActive(false);
+                background.SetActive(false);
+                brewingObjs.SetActive(false);
+                lvlObjs.SetActive(false);
+                pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(false);
+                gameOverObjs.SetActive(true);
                 break;
             case State.Clear:
                 encyclopedia.SetActive(false);
@@ -127,6 +142,7 @@ public class GameManager : MonoBehaviour
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
+                gameOverObjs.SetActive(true);
                 break;
             case State.Fail:
                 encyclopedia.SetActive(false);
@@ -135,6 +151,7 @@ public class GameManager : MonoBehaviour
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
+                gameOverObjs.SetActive(true);
                 break;
             default:
                 break;
