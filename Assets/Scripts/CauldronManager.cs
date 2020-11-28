@@ -44,11 +44,8 @@ public class CauldronManager : MonoBehaviour
                 {
                     filled = true;
                 }
+                break; //Exit for loop when ingredient is added.
             }
-        }
-        if (!filled)
-        {
-            Destroy(gameObject);
         }
     }
 
