@@ -810,11 +810,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Triton Adamski:\t\t\t\t\t\tAudio, Art, and UI Design\n\nJohn Hayes:\t\t\t\t\t\t\tMain
-    Game Screen And \n\t\t\t\t\t\t\t\t\t\t\tPotion Brewing\n\nSijal Jaradat:\t\t\t\t\t\tPotion
-    Encyclopedia\n\nFisher Meddaugh:\t\t\t\t\tIngredients Screen and \n\t\t\t\t\t\t\t\t\t\t\tPotion
-    Brewing\n\nCorey Rigney:\t\t\t\t\t\tMain Game Loop and \n\t\t\t\t\t\t\t\t\t\t\tFeature
-    Integration"
+  m_Text: "Triton Adamski:\t\t\t\t\t\tAudio, Art, and UI Design\n\nJohn Hayes:\t\t\t\t\t\t\tMixing
+    Screen And \n\t\t\t\t\t\t\t\t\t\t\tPotion Brewing\n\nSijal Jaradat:\t\t\t\t\t\tPotion
+    Encyclopedia\n\nFisher Meddaugh:\t\t\t\t\tIngredients Chest and \n\t\t\t\t\t\t\t\t\t\t\tPotion
+    Brewing\n\nCorey Rigney:\t\t\t\t\t\tMain Game Loop and \n\t\t\t\t\t\t\t\t\t\t\tIntegration"
 --- !u!222 &608620285
 CanvasRenderer:
   m_ObjectHideFlags: 0
