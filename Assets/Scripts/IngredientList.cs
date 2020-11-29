@@ -21,6 +21,8 @@ public class IngredientList : MonoBehaviour
         Ingredient newIngredient;
         INGREDIENT_CATEGORY currentCat = INGREDIENT_CATEGORY.Base;
 
+        #region IngredientDeclaration
+
         //start with adding the bases
         indexOfCategory[(int)currentCat] = ingredientCount;
 
@@ -509,6 +511,8 @@ public class IngredientList : MonoBehaviour
 
         //end the final category
         endOfCategory[(int)currentCat] = ingredientCount;
+
+        #endregion
     }
 
     public INGREDIENT_TAG mixPotion(int[] selectedIngredients)
