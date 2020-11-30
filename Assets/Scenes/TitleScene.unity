@@ -1661,11 +1661,11 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 47a80b6487610f24f8b109cc880f342f, type: 3}
     - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
       propertyPath: fxVolume
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
       propertyPath: bgmVolume
-      value: 0.6
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4257998893788121911, guid: 807a3fa184184b44792758401ca932f8, type: 3}
       propertyPath: m_Name

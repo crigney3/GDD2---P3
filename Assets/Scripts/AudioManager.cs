@@ -14,6 +14,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource fxSource; //Plays Effects
     
     private string startingScene; //Name of the scene the Audio Manager is from
+    private bool changedScenes; //Whether the scene has changed since this was created
 
     private void Awake()
     {
@@ -56,6 +57,18 @@ public class AudioManager : MonoBehaviour
         bgmSource.volume = SanitizeVolume(volume);
     }
 
+    //Halves the BGM Volume (Used for Pausing)
+    public void HalveBGMVolume()
+    {
+        bgmSource.volume *= 0.5f;
+    }
+
+    //Doubles the BGM Volume (Used for Pausing)
+    public void DoubleBGMVolume()
+    {
+        bgmSource.volume *= 2.0f;
+    }
+
     //Plays Background Music
     public void PlayBGM(int index)
     {
@@ -95,7 +108,7 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (bgmSource != null)
+        /*if (bgmSource != null)
         {
             if (bgmSource.volume != SanitizeVolume(bgmVolume)) //Update BGM Volume
                 SetBGMVolume(bgmVolume);
@@ -104,16 +117,17 @@ public class AudioManager : MonoBehaviour
         {
             if (fxSource.volume != SanitizeVolume(fxVolume)) //Update FX Volume
                 SetFXVolume(fxVolume);
-        }
+        }*/
+        if (startingScene != SceneManager.GetActiveScene().name && !changedScenes) //Marks that the scene has changed
+            changedScenes = true;
+
 
         //Stops background music when changing scenes
-        if (startingScene != SceneManager.GetActiveScene().name && bgmSource.isPlaying)
+        if (changedScenes && bgmSource.isPlaying)
             stopBGM();
 
         //Waits until effects have finished to delete audio manager after changing scenes
-        if (startingScene != SceneManager.GetActiveScene().name && !fxSource.isPlaying) 
-        {
+        if (changedScenes && !fxSource.isPlaying) 
             Destroy(gameObject);
-        }
     }
 }
