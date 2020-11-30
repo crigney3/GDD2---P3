@@ -10,34 +10,40 @@ public class ChestManager : MonoBehaviour
     public Sprite noHover;
     public Sprite hover;
     private GameObject ingStorage;
+    static GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
         ingStorage = GameObject.Find("IngredientsStorage");
+        gm = GameManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (gm.BlockButtons && GetComponent<SpriteRenderer>().sprite != noHover)
+            GetComponent<SpriteRenderer>().sprite = noHover;
     }
 
     private void OnMouseDown()
     {
         //Open ingredient screen here.
-        GameManager.Instance.currentState = GameManager.Instance.ChangeGameState(GameManager.State.Ingredients);
+        if (!gm.BlockButtons)
+            gm.ButtonGameState("Ingredients");
         //ingredient = Instantiate(ingredient, Input.mousePosition, Quaternion.identity);
         //ingredient.GetComponent<IngredientManager>().ingredientType = itemValue;
     }
 
     private void OnMouseEnter()
     {
-        GetComponent<SpriteRenderer>().sprite = hover;
+        if (!gm.BlockButtons)
+            GetComponent<SpriteRenderer>().sprite = hover;
     }
 
     private void OnMouseExit()
     {
-        GetComponent<SpriteRenderer>().sprite = noHover;
+        if (!gm.BlockButtons)
+            GetComponent<SpriteRenderer>().sprite = noHover;
     }
 
     public void MakeIngredient(int index)
