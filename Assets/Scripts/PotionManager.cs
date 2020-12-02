@@ -44,6 +44,12 @@ public class PotionManager : MonoBehaviour
         //GameObject.Find("ResetPotion").SetActive(true); //Enable potion dumping button.
     }
 
+    public void emptyPotion()
+    {
+        ingredients = new GameObject[8];
+        filled = false;
+    }
+
     public int[] getIngredientIndexes()
     {
         int[] returner = new int[8];
