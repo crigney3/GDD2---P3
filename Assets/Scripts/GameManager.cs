@@ -189,6 +189,7 @@ public class GameManager : MonoBehaviour
                 failObjs.SetActive(false);
                 blockButtons = true;
                 pauseBtn.interactable = false;
+                GameObject.Find("ClearScreenText").GetComponent<Text>().text = lvlManager.activeLevel.LevelCompleteText;
                 audioManager.SetBGMVolume(0.1f);
                 audioManager.PlayBGM(2);
                 break;
@@ -204,6 +205,7 @@ public class GameManager : MonoBehaviour
                 failObjs.SetActive(true);
                 blockButtons = true;
                 pauseBtn.interactable = false;
+                GameObject.Find("FailScreenText").GetComponent<Text>().text = lvlManager.activeLevel.LevelFailedText;
                 audioManager.SetBGMVolume(0.1f);
                 audioManager.PlayBGM(3);
                 break;
