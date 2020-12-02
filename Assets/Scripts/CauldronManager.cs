@@ -14,6 +14,7 @@ public class CauldronManager : MonoBehaviour
     static GameManager gm;
     public GameObject audioManager;
     private AudioManager audioScript;
+    public GameObject potionBtns;
 
     public bool Filled
     {
@@ -38,9 +39,14 @@ public class CauldronManager : MonoBehaviour
 
         if (gm.BlockButtons && GetComponent<SpriteRenderer>().sprite != noHover)
             GetComponent<SpriteRenderer>().sprite = noHover;
+
+        if (filled && !potionBtns.activeInHierarchy) //Shows buttons when potion has been made
+            potionBtns.SetActive(true);
+        else if (!filled && potionBtns.activeInHierarchy) //Hides buttons when potion has not been made
+            potionBtns.SetActive(false);
     }
 
-    private void EmptyCauldron()
+    public void EmptyCauldron()
     {
         audioScript.PlayFX(10);
         ingredients = new GameObject[8]; //Just refresh the cauldron.

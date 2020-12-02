@@ -13,6 +13,8 @@ public class IngredientManager : MonoBehaviour
     private GameObject brazier;
     private AudioManager audioManager;
     private Vector3 mousePos;
+
+    static GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,7 @@ public class IngredientManager : MonoBehaviour
         cauldronScript = cauldron.GetComponent<CauldronManager>();
         brazier = GameObject.Find("Brazier"); //So, ALWAYS NAME THE BRAZIER "Brazier" FOR THIS TO WORK!
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        gm = GameManager.Instance;
         //Set sprite.
         SpriteRenderer spriteRend = GetComponent<SpriteRenderer>();
         spriteRend.sprite = ingredientList.GetComponent<IngredientList>().getSprite(ingredientType);
@@ -46,12 +49,13 @@ public class IngredientManager : MonoBehaviour
 
     public void checkCollision()
     {
-        if (cauldron.GetComponent<BoxCollider2D>().OverlapPoint(mousePos) && !cauldronScript.Filled) //Put ingredient in cauldron.
+        if (cauldron.GetComponent<BoxCollider2D>().OverlapPoint(mousePos) && !cauldronScript.Filled && !gm.BlockButtons) //Put ingredient in cauldron.
         {
             carried = false;
             cauldron.GetComponent<CauldronManager>().AddIngredient(gameObject);
+            GetComponent<SpriteRenderer>().enabled = false; //Hides Ingredient
         }
-        else if(brazier.GetComponent<BoxCollider2D>().OverlapPoint(mousePos)) //Destroy object.
+        else if(brazier.GetComponent<BoxCollider2D>().OverlapPoint(mousePos) && !gm.BlockButtons) //Destroy object.
         {
             audioManager.PlayFX(4);
             carried = false;
