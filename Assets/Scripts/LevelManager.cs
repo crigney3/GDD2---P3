@@ -29,11 +29,11 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         levels = new List<LevelObject>();
-        levels.Add(new LevelObject(INGREDIENT_TAG.BasicBland));
-        levels.Add(new LevelObject(INGREDIENT_TAG.Clear));
-        levels.Add(new LevelObject(INGREDIENT_TAG.DarkHoly));
-        levels.Add(new LevelObject(INGREDIENT_TAG.FloatLight));
-        levels.Add(new LevelObject(INGREDIENT_TAG.Morning));
+        levels.Add(new LevelObject(INGREDIENT_TAG.BasicBland, "Well, there isn't much to do today, and I'm bored. Let's just blend some stuff together, and make a blending potion!"));
+        levels.Add(new LevelObject(INGREDIENT_TAG.Potent, "You've got a werewolf on your tail, and you want my advice?? Fine, make, uhhh, something to disrupt its senses! Then it can't track you."));
+        levels.Add(new LevelObject(INGREDIENT_TAG.RemediesRough, "You'll be going up against a Naga this mission. They're like a werewolf, but instead of a wolf they turn into a snake. Make sure you don't get poisoned, I don't want to be left in this basement forever."));
+        levels.Add(new LevelObject(INGREDIENT_TAG.Clear, "I can't really think of any way to beat a demon, so you might want to have a good way to escape instead of fighting this time."));
+        levels.Add(new LevelObject(INGREDIENT_TAG.FloatLight, "I'll admit you don't have the best shot against a vampire, but hey, the ability to fly certainly couldn't hurt!"));
 
         activeLevel = levels[0];
     }

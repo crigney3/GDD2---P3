@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
             case State.Ingredients:
                 encyclopedia.SetActive(false);
                 //background.SetActive(true);
-                brewingObjs.SetActive(true);
+                brewingObjs.SetActive(false);
                 dialogueBox.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
@@ -254,6 +254,8 @@ public class GameManager : MonoBehaviour
     {
         lvlManager.activeLevel = lvlManager.levels[levelID];
         currentState = ChangeGameState(State.Brewing);
+        GameObject.Find("DialogueBoxText").GetComponent<Text>().text = lvlManager.activeLevel.LevelText;
+        
     }
 
     public void switchScene(string sceneName)
