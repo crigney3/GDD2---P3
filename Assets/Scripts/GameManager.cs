@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,9 +22,17 @@ public class GameManager : MonoBehaviour
     public GameObject ingredientsObjs;
     public GameObject gameOverObjs;
 
+    private Button pauseBtn;
+    private bool blockButtons;
+
     LevelManager lvlManager;
+    public AudioManager audioManager;
 
     public static GameManager Instance { get { return _instance; } }
+    public bool BlockButtons
+    {
+        get { return blockButtons; }
+    }
 
     private void Awake()
     {
@@ -40,27 +49,24 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        background = GameObject.Find("BrewingBackground");
+        background = GameObject.Find("Background");
         encyclopedia = GameObject.Find("EncyclopediaCover");
         brewingObjs = GameObject.Find("BrewingObjects");
         lvlObjs = GameObject.Find("LevelSelectObjects");
         pauseObjs = GameObject.Find("PauseObjects");
         ingredientsObjs = GameObject.Find("Ingredients");
         gameOverObjs = GameObject.Find("GameOverObjects");
+        pauseBtn = GameObject.Find("PauseButton").GetComponent<Button>();
 
         lvlManager = LevelManager.Instance;
 
         currentState = ChangeGameState(State.lvlSelect);
         prevState = State.Title;
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
         prevState = currentState;
     }
 
@@ -71,59 +77,78 @@ public class GameManager : MonoBehaviour
         {
             case State.Title:
                 encyclopedia.SetActive(false);
-                background.SetActive(false);
+                //background.SetActive(false);
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
                 gameOverObjs.SetActive(false);
                 switchScene("TitleScene");
+                blockButtons = true;
                 break;
             case State.lvlSelect:
                 encyclopedia.SetActive(false);
-                background.SetActive(false);
+                //background.SetActive(false);
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(true);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
                 gameOverObjs.SetActive(false);
+                blockButtons = true;
+                audioManager.SetBGMVolume(0.06f);
+                audioManager.PlayBGM(1);
                 break;
             case State.Encyclopedia:
                 encyclopedia.SetActive(true);
-                background.SetActive(true);
-                brewingObjs.SetActive(false);
-                lvlObjs.SetActive(false);
-                pauseObjs.SetActive(false);
-                ingredientsObjs.SetActive(false);
-                gameOverObjs.SetActive(false);
-                break;
-            case State.Ingredients:
-                encyclopedia.SetActive(false);
-                background.SetActive(true);
-                brewingObjs.SetActive(false);
-                lvlObjs.SetActive(false);
-                pauseObjs.SetActive(false);
-                ingredientsObjs.SetActive(true);
-                gameOverObjs.SetActive(false);
-                break;
-            case State.Brewing:
-                encyclopedia.SetActive(false);
-                background.SetActive(true);
+                //background.SetActive(true);
                 brewingObjs.SetActive(true);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
                 gameOverObjs.SetActive(false);
+                blockButtons = true;
+                pauseBtn.enabled = true;
+                audioManager.PlayFX(5);
+                break;
+            case State.Ingredients:
+                encyclopedia.SetActive(false);
+                //background.SetActive(true);
+                brewingObjs.SetActive(true);
+                lvlObjs.SetActive(false);
+                pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(true);
+                gameOverObjs.SetActive(false);
+                blockButtons = true;
+                pauseBtn.interactable = true;
+                audioManager.PlayFX(7);
+                break;
+            case State.Brewing:
+                encyclopedia.SetActive(false);
+                //background.SetActive(true);
+                brewingObjs.SetActive(true);
+                lvlObjs.SetActive(false);
+                pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(false);
+                gameOverObjs.SetActive(false);
+                blockButtons = false;
+                pauseBtn.interactable = true;
+                if (prevState == State.lvlSelect)
+                {
+                    audioManager.SetBGMVolume(0.1f);
+                    audioManager.PlayBGM(0);
+                }
                 break;
             case State.Pause:
                 encyclopedia.SetActive(false);
-                background.SetActive(false);
-                brewingObjs.SetActive(false);
+                //background.SetActive(false);
+                brewingObjs.SetActive(true);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(true);
                 ingredientsObjs.SetActive(false);
                 gameOverObjs.SetActive(false);
 
+                blockButtons = true;
+                pauseBtn.interactable = false;
                 prePauseState = currentState;
                 break;
             case State.PotionCheck:
@@ -137,21 +162,29 @@ public class GameManager : MonoBehaviour
                 break;
             case State.Clear:
                 encyclopedia.SetActive(false);
-                background.SetActive(false);
+                //background.SetActive(false);
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
                 gameOverObjs.SetActive(true);
+                blockButtons = true;
+                pauseBtn.interactable = false;
+                audioManager.SetBGMVolume(0.1f);
+                audioManager.PlayBGM(2);
                 break;
             case State.Fail:
                 encyclopedia.SetActive(false);
-                background.SetActive(false);
+                //background.SetActive(false);
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
                 ingredientsObjs.SetActive(false);
                 gameOverObjs.SetActive(true);
+                blockButtons = true;
+                pauseBtn.interactable = false;
+                audioManager.SetBGMVolume(0.1f);
+                audioManager.PlayBGM(3);
                 break;
             default:
                 break;

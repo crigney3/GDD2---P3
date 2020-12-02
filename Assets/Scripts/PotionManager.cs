@@ -11,26 +11,33 @@ public class PotionManager : MonoBehaviour
     public Sprite hoverFull;
 
     private GameObject[] ingredients;
+    static GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
         filled = false;
+        gm = GameManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (gm.BlockButtons)
+        {
+            if (filled && GetComponent<SpriteRenderer>().sprite != noHoverFull)
+                GetComponent<SpriteRenderer>().sprite = noHoverFull;
+            else if (!filled && GetComponent<SpriteRenderer>().sprite != noHoverEmpty)
+                GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
+        }
     }
     private void OnMouseEnter()
     {
-        if(filled)
+        if (!gm.BlockButtons)
         {
-            GetComponent<SpriteRenderer>().sprite = hoverFull;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().sprite = hoverEmpty;
+            if (filled)
+                GetComponent<SpriteRenderer>().sprite = hoverFull;
+            else
+                GetComponent<SpriteRenderer>().sprite = hoverEmpty;
         }
         
     }
@@ -42,6 +49,12 @@ public class PotionManager : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = noHoverFull;
         //GameObject.Find("AdvanceButton").SetActive(true); //Enable potion checking button.
         //GameObject.Find("ResetPotion").SetActive(true); //Enable potion dumping button.
+    }
+
+    public void emptyPotion()
+    {
+        ingredients = new GameObject[8];
+        filled = false;
     }
 
     public int[] getIngredientIndexes()
@@ -56,13 +69,12 @@ public class PotionManager : MonoBehaviour
 
     private void OnMouseExit()
     {
-        if (filled)
+        if (!gm.BlockButtons)
         {
-            GetComponent<SpriteRenderer>().sprite = noHoverFull;
-        }
-        else
-        {
-            GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
+            if (filled)
+                GetComponent<SpriteRenderer>().sprite = noHoverFull;
+            else
+                GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
         }
     }
 }

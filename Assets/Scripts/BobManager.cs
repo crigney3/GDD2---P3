@@ -6,38 +6,36 @@ public class BobManager : MonoBehaviour
 {
     public Sprite noHover;
     public Sprite hover;
-    public bool overBob;
 
-    static GameManager gm = GameManager.Instance;
+    static GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
-
+        gm = GameManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (gm.BlockButtons && GetComponent<SpriteRenderer>().sprite != noHover)
+            GetComponent<SpriteRenderer>().sprite = noHover;
     }
 
     private void OnMouseEnter()
     {
-        GetComponent<SpriteRenderer>().sprite = hover;
-        overBob = true;
+        if (!gm.BlockButtons)
+            GetComponent<SpriteRenderer>().sprite = hover;
     }
 
     private void OnMouseExit()
     {
-        GetComponent<SpriteRenderer>().sprite = noHover;
-        overBob = false;
+        if (!gm.BlockButtons)
+            GetComponent<SpriteRenderer>().sprite = noHover;
     }
 
     private void OnMouseDown()
     {
-        if (overBob)
-        {
-            GameManager.Instance.ButtonGameState("Encyclopedia");
-        }
+        if (!gm.BlockButtons)
+            gm.ButtonGameState("Encyclopedia");
     }
 }
