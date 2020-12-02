@@ -5,10 +5,16 @@ using UnityEngine;
 public class LevelObject
 {
     private INGREDIENT_TAG winIngredientTag;
+    public string LevelText;
+    public string LevelFailedText;
+    public string LevelCompleteText;
 
-    public LevelObject(INGREDIENT_TAG winTag)
+    public LevelObject(INGREDIENT_TAG winTag, string text, string failed, string complete)
     {
         winIngredientTag = winTag;
+        LevelText = text;
+        LevelFailedText = failed;
+        LevelCompleteText = complete;
     }
 
     public INGREDIENT_TAG getWinTag()

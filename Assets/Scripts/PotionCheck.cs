@@ -13,9 +13,14 @@ public class PotionCheck : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        potion = GameObject.Find("Potion");
+        ingredientList = GameObject.Find("Ingredient List Manager");
+        //potionType = ingredientList.GetComponent<IngredientList>().mixPotion(potion.GetComponent<PotionManager>().getIngredientIndexes());
+
         //potion = GameObject.Find("Potion");
         //ingredientList = GameObject.Find("IngredientListManager");
         /*potionType = ingredientList.GetComponent<IngredientList>().mixPotion(potion.GetComponent<PotionManager>().getIngredientIndexes());
+
 
         success = LevelManager.Instance.activeLevel.checkWin(potionType);
 
@@ -38,8 +43,12 @@ public class PotionCheck : MonoBehaviour
 
     public void CheckPotion()
     {
+        GameManager.Instance.ChangeGameState(GameManager.State.PotionCheck);
+
         potionType = ingredientList.GetComponent<IngredientList>().mixPotion(potion.GetComponent<PotionManager>().getIngredientIndexes());
-        
+
+        Debug.Log(potionType);
+
         success = LevelManager.Instance.activeLevel.checkWin(potionType);
 
         if (success)
