@@ -22,14 +22,16 @@ public class PotionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gm.BlockButtons)
+        //Potion isn't clickable so it doesn't need a highlight
+        /*if (gm.BlockButtons)
         {
             if (filled && GetComponent<SpriteRenderer>().sprite != noHoverFull)
                 GetComponent<SpriteRenderer>().sprite = noHoverFull;
             else if (!filled && GetComponent<SpriteRenderer>().sprite != noHoverEmpty)
                 GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
-        }
+        }*/
     }
+    /*
     private void OnMouseEnter()
     {
         if (!gm.BlockButtons)
@@ -41,6 +43,17 @@ public class PotionManager : MonoBehaviour
         }
         
     }
+    
+     private void OnMouseExit()
+    {
+        if (!gm.BlockButtons)
+        {
+            if (filled)
+                GetComponent<SpriteRenderer>().sprite = noHoverFull;
+            else
+                GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
+        }
+    }*/
 
     public void fillPotion(GameObject[] ingredients)
     {
@@ -55,26 +68,18 @@ public class PotionManager : MonoBehaviour
     {
         ingredients = new GameObject[8];
         filled = false;
+        GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
     }
 
     public int[] getIngredientIndexes()
     {
+
         int[] returner = new int[8];
         for(int a = 0; a < 8; a++)
         {
+            Debug.Log("Index: " + a);
             returner[a] = ingredients[a].GetComponent<IngredientManager>().ingredientType;
         }
         return returner;
-    }
-
-    private void OnMouseExit()
-    {
-        if (!gm.BlockButtons)
-        {
-            if (filled)
-                GetComponent<SpriteRenderer>().sprite = noHoverFull;
-            else
-                GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
-        }
     }
 }

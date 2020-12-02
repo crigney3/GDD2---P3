@@ -5,9 +5,10 @@ using UnityEngine;
 public class PotionCheck : MonoBehaviour
 {
     private bool success;
-    private GameObject potion;
-    private GameObject ingredientList;
+    public GameObject potion;
+    public GameObject ingredientList;
     private INGREDIENT_TAG potionType;
+    private GameManager gm;
 
     // Start is called before the first frame update
     void Start()
@@ -16,16 +17,22 @@ public class PotionCheck : MonoBehaviour
         ingredientList = GameObject.Find("Ingredient List Manager");
         potionType = ingredientList.GetComponent<IngredientList>().mixPotion(potion.GetComponent<PotionManager>().getIngredientIndexes());
 
+        //potion = GameObject.Find("Potion");
+        //ingredientList = GameObject.Find("IngredientListManager");
+        /*potionType = ingredientList.GetComponent<IngredientList>().mixPotion(potion.GetComponent<PotionManager>().getIngredientIndexes());
+
+
         success = LevelManager.Instance.activeLevel.checkWin(potionType);
 
         if(success)
         {
-            GameObject.Find("PotionCheckText").GetComponent<UnityEngine.UI.Text>().text = "Success!";
+            GameObject.Find("PotionCheckText").GetComponent<UnityEngine.UI.Text>().text = "Mission Cleared";
         }
         else
         {
-            GameObject.Find("PotionCheckText").GetComponent<UnityEngine.UI.Text>().text = "Failure...";
-        }
+            GameObject.Find("PotionCheckText").GetComponent<UnityEngine.UI.Text>().text = "Mission Failed";
+        }*/
+        gm = GameManager.Instance;
     }
 
     // Update is called once per frame
@@ -39,16 +46,18 @@ public class PotionCheck : MonoBehaviour
         GameManager.Instance.ChangeGameState(GameManager.State.PotionCheck);
 
         potionType = ingredientList.GetComponent<IngredientList>().mixPotion(potion.GetComponent<PotionManager>().getIngredientIndexes());
-
+        
         success = LevelManager.Instance.activeLevel.checkWin(potionType);
 
         if (success)
         {
-            GameObject.Find("PotionCheckText").GetComponent<UnityEngine.UI.Text>().text = "Success!";
+            //GameObject.Find("PotionCheckText").GetComponent<UnityEngine.UI.Text>().text = "Mission Cleared";
+            gm.ButtonGameState("Clear");
         }
         else
         {
-            GameObject.Find("PotionCheckText").GetComponent<UnityEngine.UI.Text>().text = "Failure...";
+            //GameObject.Find("PotionCheckText").GetComponent<UnityEngine.UI.Text>().text = " Mission Failed";
+            gm.ButtonGameState("Fail");
         }
     }
 }
