@@ -40,10 +40,12 @@ public class ChestManager : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = noHover;
     }
 
-    public void MakeIngredient(int index)
+    public void MakeIngredient(int index, IngredientPage ingredientPage)
     {
         ingredient = Instantiate(ingredientT, Input.mousePosition, Quaternion.identity);
-        ingredient.GetComponent<IngredientManager>().ingredientType = index;
+        IngredientManager im = ingredient.GetComponent<IngredientManager>();
+        im.ingredientType = index;
+        im.ingredientPage = ingredientPage;
         ingredient.transform.parent = ingStorage.transform;
     }
 }

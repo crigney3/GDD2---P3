@@ -11,9 +11,12 @@ public class Ingredient
     private Sprite sprite;
 
     //accessors
+    public string Name => ingredientName;
+    public INGREDIENT_CATEGORY Category => category;
     public List<INGREDIENT_TAG> Tags => tags;
     public Sprite Sprite => sprite;
-    public string Name => ingredientName;
+
+
 
     public void Init(int newID, string newIngredientName, INGREDIENT_CATEGORY newCategory, List<INGREDIENT_TAG> newTags)
     {

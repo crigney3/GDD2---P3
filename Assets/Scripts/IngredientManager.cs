@@ -11,6 +11,8 @@ public class IngredientManager : MonoBehaviour
     private GameObject cauldron;
     private GameObject brazier;
     private Vector3 mousePos;
+
+    public IngredientPage ingredientPage;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +52,8 @@ public class IngredientManager : MonoBehaviour
         else if(brazier.GetComponent<BoxCollider2D>().OverlapPoint(mousePos)) //Destroy object.
         {
             carried = false;
+            ingredientPage.removeIngredient(ingredientType);
             Destroy(gameObject);
         }
-        
     }
 }

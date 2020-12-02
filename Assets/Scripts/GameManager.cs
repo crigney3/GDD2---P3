@@ -98,6 +98,7 @@ public class GameManager : MonoBehaviour
                 brewingObjs.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
+                ingredientsObjs.GetComponentInChildren<IngredientPage>().Reload();
                 ingredientsObjs.SetActive(true);
                 break;
             case State.Brewing:
