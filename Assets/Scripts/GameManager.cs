@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         lvlObjs = GameObject.Find("LevelSelectObjects");
         pauseObjs = GameObject.Find("PauseObjects");
         ingredientsObjs = GameObject.Find("Ingredients");
+        //gameOverObjs = GameObject.Find("GameOverObjects");
         pauseBtn = GameObject.Find("PauseButton").GetComponent<Button>();
         clearObjs = GameObject.Find("ClearScreen");
         failObjs = GameObject.Find("FailScreen");
@@ -123,7 +124,7 @@ public class GameManager : MonoBehaviour
             case State.Ingredients:
                 encyclopedia.SetActive(false);
                 //background.SetActive(true);
-                brewingObjs.SetActive(true);
+                brewingObjs.SetActive(false);
                 dialogueBox.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
@@ -167,6 +168,15 @@ public class GameManager : MonoBehaviour
                 pauseBtn.interactable = false;
                 prePauseState = currentState;
                 break;
+            case State.PotionCheck:
+                encyclopedia.SetActive(false);
+                background.SetActive(false);
+                brewingObjs.SetActive(false);
+                lvlObjs.SetActive(false);
+                pauseObjs.SetActive(false);
+                ingredientsObjs.SetActive(false);
+                //gameOverObjs.SetActive(true);
+                break;
             case State.Clear:
                 encyclopedia.SetActive(false);
                 //background.SetActive(false);
@@ -179,6 +189,7 @@ public class GameManager : MonoBehaviour
                 failObjs.SetActive(false);
                 blockButtons = true;
                 pauseBtn.interactable = false;
+                GameObject.Find("ClearScreenText").GetComponent<Text>().text = lvlManager.activeLevel.LevelCompleteText;
                 audioManager.SetBGMVolume(0.1f);
                 audioManager.PlayBGM(2);
                 break;
@@ -194,6 +205,7 @@ public class GameManager : MonoBehaviour
                 failObjs.SetActive(true);
                 blockButtons = true;
                 pauseBtn.interactable = false;
+                GameObject.Find("FailScreenText").GetComponent<Text>().text = lvlManager.activeLevel.LevelFailedText;
                 audioManager.SetBGMVolume(0.1f);
                 audioManager.PlayBGM(3);
                 break;
@@ -245,6 +257,8 @@ public class GameManager : MonoBehaviour
     {
         lvlManager.activeLevel = lvlManager.levels[levelID];
         currentState = ChangeGameState(State.Brewing);
+        GameObject.Find("DialogueBoxText").GetComponent<Text>().text = lvlManager.activeLevel.LevelText;
+        
     }
 
     public void switchScene(string sceneName)
