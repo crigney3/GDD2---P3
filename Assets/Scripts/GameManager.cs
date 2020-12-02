@@ -128,6 +128,7 @@ public class GameManager : MonoBehaviour
                 dialogueBox.SetActive(false);
                 lvlObjs.SetActive(false);
                 pauseObjs.SetActive(false);
+                ingredientsObjs.GetComponentInChildren<IngredientPage>().Reload();
                 ingredientsObjs.SetActive(true);
                 clearObjs.SetActive(false);
                 failObjs.SetActive(false);

@@ -566,7 +566,7 @@ public class IngredientList : MonoBehaviour
             Transform slot = ingredientSlots.GetChild(i);
 
             //sets the sprite
-            slot.GetChild(0).GetComponent<SpriteRenderer>().sprite = getSprite(index);
+            slot.GetChild(0).GetComponent<Image>().sprite = getSprite(index);
 
             //sets the text
             slot.GetChild(1).GetComponent<Text>().text = getName(index);
@@ -589,6 +589,12 @@ public class IngredientList : MonoBehaviour
     public string getName(int index)
     {
         return ingredients[index].Name;
+    }
+
+    //give the category as an int
+    public int getCategoryInt(int index)
+    {
+        return (int)ingredients[index].Category;
     }
 }
 

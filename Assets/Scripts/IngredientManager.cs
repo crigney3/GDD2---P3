@@ -14,6 +14,8 @@ public class IngredientManager : MonoBehaviour
     private AudioManager audioManager;
     private Vector3 mousePos;
 
+
+    public IngredientPage ingredientPage;
     static GameManager gm;
     // Start is called before the first frame update
     void Start()
@@ -59,8 +61,8 @@ public class IngredientManager : MonoBehaviour
         {
             audioManager.PlayFX(4);
             carried = false;
+            ingredientPage.removeIngredient(ingredientType);
             Destroy(gameObject);
         }
-        
     }
 }
