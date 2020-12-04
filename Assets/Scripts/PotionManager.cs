@@ -71,6 +71,7 @@ public class PotionManager : MonoBehaviour
 
     public void emptyPotion()
     {
+        if (ingredients == null) return;
         foreach (GameObject ing in ingredients)
         {
             Destroy(ing);

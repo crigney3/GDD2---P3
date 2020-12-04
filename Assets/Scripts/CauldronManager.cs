@@ -15,6 +15,7 @@ public class CauldronManager : MonoBehaviour
     public GameObject audioManager;
     private AudioManager audioScript;
     public GameObject potionBtns;
+    public GameObject ingredientPage;
 
     public bool Filled
     {
@@ -53,6 +54,7 @@ public class CauldronManager : MonoBehaviour
     {
         ingredients = new GameObject[8]; //Just refresh the cauldron.
         filled = false;
+        ingredientPage.GetComponent<IngredientPage>().Restart();
     }
 
     public void AddIngredient(GameObject ingredient)
