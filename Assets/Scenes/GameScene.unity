@@ -2686,7 +2686,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: ec4cd7645f00edd45bbf5ea71cb0310f, type: 3}
     - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
       propertyPath: bgmVolume
-      value: 0.04
+      value: 0.07
       objectReference: {fileID: 0}
     - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
       propertyPath: fxVolume
@@ -2696,6 +2696,10 @@ PrefabInstance:
       propertyPath: fxClips.Array.data[12]
       value: 
       objectReference: {fileID: 8300000, guid: b7469ea1881a55e4b8343531a824ecd2, type: 3}
+    - target: {fileID: 4257998893788121910, guid: 807a3fa184184b44792758401ca932f8, type: 3}
+      propertyPath: startingBGMIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4257998893788121911, guid: 807a3fa184184b44792758401ca932f8, type: 3}
       propertyPath: m_Name
       value: AudioManager
