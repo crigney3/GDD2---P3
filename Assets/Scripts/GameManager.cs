@@ -253,12 +253,24 @@ public class GameManager : MonoBehaviour
         currentState = ChangeGameState(prePauseState);
     }
 
+    public void RestartLevel()
+    {
+        brewingObjs.GetComponentInChildren<PotionManager>().emptyPotion();
+        brewingObjs.GetComponentInChildren<CauldronManager>().EmptyCauldron();
+
+        Transform parent = GameObject.Find("IngredientsStorage").transform;
+        foreach (Transform child in parent)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
     public void LevelButton(int levelID)
     {
         lvlManager.activeLevel = lvlManager.levels[levelID];
         currentState = ChangeGameState(State.Brewing);
         GameObject.Find("DialogueBoxText").GetComponent<Text>().text = lvlManager.activeLevel.LevelText;
-        
+        RestartLevel();
     }
 
     public void switchScene(string sceneName)
