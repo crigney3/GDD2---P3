@@ -29,6 +29,11 @@ public class IngredientPage : MonoBehaviour
         
     }
 
+    public void Restart()
+    {
+        usedIngredients = new bool[8]; //init bool array to false, since nothing has been used at the start
+    }
+
     public void Reload()
     {
         SetPageActive(0);
@@ -112,7 +117,8 @@ public class IngredientPage : MonoBehaviour
         usedIngredients[ingredientList.getCategoryInt(index)] = true;
 
         chest.GetComponent<ChestManager>().MakeIngredient(index, this);
-        GameManager.Instance.currentState = GameManager.Instance.ChangeGameState(GameManager.State.Brewing);
+
+        SetPageActive(activePage);
     }
 
     public void removeIngredient(int index)
