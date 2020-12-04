@@ -32,6 +32,9 @@ public class PotionManager : MonoBehaviour
             else if (!filled && GetComponent<SpriteRenderer>().sprite != noHoverEmpty)
                 GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
         }*/
+
+        if (gm.currentState == GameManager.State.Clear || gm.currentState == GameManager.State.Fail) //Empties the potion after finishing the level
+            emptyPotion();
     }
     /*
     private void OnMouseEnter()
@@ -68,6 +71,10 @@ public class PotionManager : MonoBehaviour
 
     public void emptyPotion()
     {
+        foreach (GameObject ing in ingredients)
+        {
+            Destroy(ing);
+        }
         ingredients = new GameObject[8];
         filled = false;
         ingredientPage.GetComponent<IngredientPage>().Restart();

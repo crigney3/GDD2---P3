@@ -44,11 +44,13 @@ public class CauldronManager : MonoBehaviour
             potionBtns.SetActive(true);
         else if (!filled && potionBtns.activeInHierarchy) //Hides buttons when potion has not been made
             potionBtns.SetActive(false);
+
+        if (gm.currentState == GameManager.State.Clear || gm.currentState == GameManager.State.Fail) //Empties the cauldron after finishing the level
+            EmptyCauldron();
     }
 
     public void EmptyCauldron()
     {
-        audioScript.PlayFX(10);
         ingredients = new GameObject[8]; //Just refresh the cauldron.
         filled = false;
     }

@@ -14,6 +14,10 @@ public class IngredientPage : MonoBehaviour
 
     private bool[] usedIngredients;
 
+    public GameObject audioManager;
+    private AudioManager audioScript;
+    private int heldIngredients = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +30,8 @@ public class IngredientPage : MonoBehaviour
             int page = i;
             buttonList[page].onClick.AddListener(() => SetPageActive(page));
         }
-        
+
+        audioScript = audioManager.GetComponent<AudioManager>();
     }
 
     public void Restart()
@@ -64,7 +69,7 @@ public class IngredientPage : MonoBehaviour
         {
             //has been used already
             text.text = "You have already used an ingredient of this type.";
-            text.fontStyle = FontStyle.Bold;
+            //text.fontStyle = FontStyle.Bold;
             foreach(Button button in buttons)
             {
                 button.interactable = false;
@@ -110,13 +115,14 @@ public class IngredientPage : MonoBehaviour
     //sends the chosen ingredient
     public void ingredientClick(int index)
     {
+        audioScript.PlayFX(12);
         //the index in the ingredient list of the ingredient that is clicked
         index = ingredientList.getIndexFromCategory(activePage, index);
 
         //set bool to true now that you used that type of ingredient
         usedIngredients[ingredientList.getCategoryInt(index)] = true;
-
-        chest.GetComponent<ChestManager>().MakeIngredient(index, this);
+        heldIngredients++;
+        chest.GetComponent<ChestManager>().MakeIngredient(index, this, heldIngredients);
 
         SetPageActive(activePage);
     }
@@ -129,7 +135,11 @@ public class IngredientPage : MonoBehaviour
 
     public void CloseEncyclopedia()
     {
-        //TODO: Add connection to game manager to close the potion encyclopedia
         GameManager.Instance.currentState = GameManager.Instance.ChangeGameState(GameManager.State.Brewing);
+    }
+
+    public void DropIngredients()
+    {
+        heldIngredients = 0;
     }
 }

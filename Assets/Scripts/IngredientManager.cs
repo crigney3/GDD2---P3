@@ -14,7 +14,6 @@ public class IngredientManager : MonoBehaviour
     private AudioManager audioManager;
     private Vector3 mousePos;
 
-
     public IngredientPage ingredientPage;
     static GameManager gm;
     // Start is called before the first frame update
@@ -29,7 +28,7 @@ public class IngredientManager : MonoBehaviour
         //Set sprite.
         SpriteRenderer spriteRend = GetComponent<SpriteRenderer>();
         spriteRend.sprite = ingredientList.GetComponent<IngredientList>().getSprite(ingredientType);
-        spriteRend.sortingOrder = 2;
+        //spriteRend.sortingOrder = 2;
     }
 
     // Update is called once per frame
@@ -53,12 +52,14 @@ public class IngredientManager : MonoBehaviour
     {
         if (cauldron.GetComponent<BoxCollider2D>().OverlapPoint(mousePos) && !cauldronScript.Filled && !gm.BlockButtons) //Put ingredient in cauldron.
         {
+            ingredientPage.DropIngredients();
             carried = false;
             cauldron.GetComponent<CauldronManager>().AddIngredient(gameObject);
             GetComponent<SpriteRenderer>().enabled = false; //Hides Ingredient
         }
         else if(brazier.GetComponent<BoxCollider2D>().OverlapPoint(mousePos) && !gm.BlockButtons) //Destroy object.
         {
+            ingredientPage.DropIngredients();
             audioManager.PlayFX(4);
             carried = false;
             ingredientPage.removeIngredient(ingredientType);
