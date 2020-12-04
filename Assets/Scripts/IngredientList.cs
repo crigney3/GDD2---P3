@@ -517,7 +517,7 @@ public class IngredientList : MonoBehaviour
 
     public INGREDIENT_TAG mixPotion(int[] selectedIngredients)
     {
-        int[] numberTags = new int[8];
+		Dictionary<INGREDIENT_TAG, int> numberTags = new Dictionary<INGREDIENT_TAG, int>();
 
         //loops through every ingredient used, and increases the tags each time the tag is used
         foreach(int index in selectedIngredients)
@@ -527,22 +527,27 @@ public class IngredientList : MonoBehaviour
             //increases each tag's instance
             foreach(INGREDIENT_TAG tag in tags)
             {
-                numberTags[(int)tag]++;
+				if (numberTags.ContainsKey(tag))
+				{
+					numberTags[tag]++;
+				}
+				else
+				{
+					numberTags.Add(tag, 1);
+				}
             }
         }
 
         //return the type of tag that there is the most of, minimum of 6
         INGREDIENT_TAG returnTag = INGREDIENT_TAG.Botched;
         int returnCount = 6;
-        for (int i = 0; i < numberTags.Length; i++) 
-        {
-            //find the new greatest
-            if(numberTags[i] >= returnCount)
-            {
-                returnCount = numberTags[i];
-                returnTag = (INGREDIENT_TAG)i;
-            }
-        }
+        foreach(KeyValuePair<INGREDIENT_TAG, int> t in numberTags)
+		{
+            if(t.Value > returnCount)
+			{
+				returnTag = t.Key;
+			}
+		}
         return returnTag;
     }
 
@@ -561,7 +566,7 @@ public class IngredientList : MonoBehaviour
             Transform slot = ingredientSlots.GetChild(i);
 
             //sets the sprite
-            slot.GetChild(0).GetComponent<SpriteRenderer>().sprite = getSprite(index);
+            slot.GetChild(0).GetComponent<Image>().sprite = getSprite(index);
 
             //sets the text
             slot.GetChild(1).GetComponent<Text>().text = getName(index);
@@ -584,6 +589,12 @@ public class IngredientList : MonoBehaviour
     public string getName(int index)
     {
         return ingredients[index].Name;
+    }
+
+    //give the category as an int
+    public int getCategoryInt(int index)
+    {
+        return (int)ingredients[index].Category;
     }
 }
 

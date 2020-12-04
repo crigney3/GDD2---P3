@@ -12,9 +12,12 @@ public class IngredientPage : MonoBehaviour
     private int activePage;
     public GameObject chest;
 
+    private bool[] usedIngredients;
+
     // Start is called before the first frame update
     void Start()
     {
+        usedIngredients = new bool[8]; //init bool array to false, since nothing has been used at the start
         ingredientList = GameObject.Find("Ingredient List Manager").GetComponent<IngredientList>();
 
         SetPageActive(0);
@@ -26,10 +29,14 @@ public class IngredientPage : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Restart()
     {
+        usedIngredients = new bool[8]; //init bool array to false, since nothing has been used at the start
+    }
 
+    public void Reload()
+    {
+        SetPageActive(0);
     }
 
     void HideAllPages()
@@ -45,10 +52,41 @@ public class IngredientPage : MonoBehaviour
     {
         activePage = page;
         HideAllPages();
-        pages[page].SetActive(true);
+
+        GameObject pageObj = pages[page];
+        Text text = pageObj.GetComponentInChildren<Text>();
+        Transform ingredientSlots = transform.Find("Ingredient Slots");
+
+        Button[] buttons = ingredientSlots.GetComponentsInChildren<Button>();
+
+        //sets the buttons that can be clicked
+        if (usedIngredients[page])
+        {
+            //has been used already
+            text.text = "You have already used an ingredient of this type.";
+            text.fontStyle = FontStyle.Bold;
+            foreach(Button button in buttons)
+            {
+                button.interactable = false;
+                button.gameObject.GetComponent<Image>().color = button.colors.disabledColor;
+            }
+        }
+        else
+        {
+            //hasn't been used yet
+            text.text = ((INGREDIENT_CATEGORY)page).ToString();
+            text.fontStyle = FontStyle.Normal;
+            foreach (Button button in buttons)
+            {
+                button.interactable = true;
+                button.gameObject.GetComponent<Image>().color = button.colors.normalColor;
+            }
+        }
+
+        pageObj.SetActive(true);
 
         //gets the sprite images set up
-        ingredientList.setUISprites(page, transform.Find("Ingredient Slots"));
+        ingredientList.setUISprites(page, ingredientSlots);
 
         Debug.Log("You have clicked button # " + page);
     }
@@ -75,8 +113,18 @@ public class IngredientPage : MonoBehaviour
         //the index in the ingredient list of the ingredient that is clicked
         index = ingredientList.getIndexFromCategory(activePage, index);
 
-        chest.GetComponent<ChestManager>().MakeIngredient(index);
-        GameManager.Instance.currentState = GameManager.Instance.ChangeGameState(GameManager.State.Brewing);
+        //set bool to true now that you used that type of ingredient
+        usedIngredients[ingredientList.getCategoryInt(index)] = true;
+
+        chest.GetComponent<ChestManager>().MakeIngredient(index, this);
+
+        SetPageActive(activePage);
+    }
+
+    public void removeIngredient(int index)
+    {
+        //set bool to true now that you used that type of ingredient
+        usedIngredients[ingredientList.getCategoryInt(index)] = false;
     }
 
     public void CloseEncyclopedia()
