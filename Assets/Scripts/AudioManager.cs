@@ -108,19 +108,8 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (bgmSource != null)
-        {
-            if (bgmSource.volume != SanitizeVolume(bgmVolume)) //Update BGM Volume
-                SetBGMVolume(bgmVolume);
-        }
-        if (fxSource != null)
-        {
-            if (fxSource.volume != SanitizeVolume(fxVolume)) //Update FX Volume
-                SetFXVolume(fxVolume);
-        }*/
         if (startingScene != SceneManager.GetActiveScene().name && !changedScenes) //Marks that the scene has changed
             changedScenes = true;
-
 
         //Stops background music when changing scenes
         if (changedScenes && bgmSource.isPlaying)
