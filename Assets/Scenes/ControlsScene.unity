@@ -199,7 +199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 50295943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.225, y: -0.625, z: 0}
+  m_LocalPosition: {x: 2.69, y: -0.375, z: 0}
   m_LocalScale: {x: 0.125, y: 0.125, z: 1}
   m_Children: []
   m_Father: {fileID: 1605601046}
@@ -834,7 +834,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 32d7686372abb004dbdd5a5032c67a99, type: 3}
-    m_FontSize: 28
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -849,9 +849,10 @@ MonoBehaviour:
     potions.\n\nClick the Ingredients Chest (         ) to view the available ingredients
     and get them out.\n\nWhen holding an ingredient, click the Cauldron (    ) to
     add it to the potion or click the Brazier (    ) to get dispose it.\n\nPotions
-    require 8 different ingredients, one of each type. After adding 8 Ingredients
-    to the cauldron, a potion is brewed. \n\nAfter brewing a potion, you can choose
-    to start the mission or dump the potion and start over.\n"
+    require 8 different ingredients, one of each type. After adding 8 ingredients
+    to the cauldron, no more can be added and a potion is brewed. \n\nAfter brewing
+    a potion, you can choose to start the mission or empty the cauldron and start
+    over.\n"
 --- !u!222 &658630761
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1002,7 +1003,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735050092}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6, y: -1.1, z: 0}
+  m_LocalPosition: {x: -0.8, y: -0.8, z: 0}
   m_LocalScale: {x: 0.06, y: 0.06, z: 1}
   m_Children: []
   m_Father: {fileID: 1605601046}
@@ -1324,7 +1325,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817527790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 0.7, z: 0}
+  m_LocalPosition: {x: -0.39, y: 0.84, z: 0}
   m_LocalScale: {x: 0.04, y: 0.04, z: 1}
   m_Children: []
   m_Father: {fileID: 1605601046}
@@ -1750,7 +1751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050580805}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9, y: 2.025, z: 0}
+  m_LocalPosition: {x: -3.063, y: 2.05, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_Children: []
   m_Father: {fileID: 1605601046}

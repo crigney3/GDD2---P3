@@ -46,12 +46,15 @@ public class ChestManager : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = noHover;
     }
 
-    public void MakeIngredient(int index, IngredientPage ingredientPage)
+    public void MakeIngredient(int index, IngredientPage ingredientPage, int ingredientNum)
     {
         ingredient = Instantiate(ingredientT, Input.mousePosition, Quaternion.identity);
         IngredientManager im = ingredient.GetComponent<IngredientManager>();
         im.ingredientType = index;
         im.ingredientPage = ingredientPage;
         ingredient.transform.parent = ingStorage.transform;
+
+        SpriteRenderer rend = ingredient.GetComponent<SpriteRenderer>();
+        rend.sortingOrder = ingredientNum + 1;
     }
 }
