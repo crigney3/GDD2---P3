@@ -10,6 +10,8 @@ public class PotionCheck : MonoBehaviour
     private INGREDIENT_TAG potionType;
     private GameManager gm;
 
+    public GameObject ingredientPage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,8 @@ public class PotionCheck : MonoBehaviour
         Debug.Log(potionType);
 
         success = LevelManager.Instance.activeLevel.checkWin(potionType);
+
+        ingredientPage.GetComponent<IngredientPage>().Restart();
 
         if (success)
         {

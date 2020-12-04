@@ -12,6 +12,8 @@ public class PotionManager : MonoBehaviour
 
     private GameObject[] ingredients;
     static GameManager gm;
+    public GameObject ingredientPage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +70,7 @@ public class PotionManager : MonoBehaviour
     {
         ingredients = new GameObject[8];
         filled = false;
+        ingredientPage.GetComponent<IngredientPage>().Restart();
         GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
     }
 
