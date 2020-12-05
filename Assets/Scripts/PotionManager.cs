@@ -13,6 +13,7 @@ public class PotionManager : MonoBehaviour
     private GameObject[] ingredients;
     static GameManager gm;
     public GameObject ingredientPage;
+    public GameObject potionBtns;
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +34,10 @@ public class PotionManager : MonoBehaviour
                 GetComponent<SpriteRenderer>().sprite = noHoverEmpty;
         }*/
 
-        if (gm.currentState == GameManager.State.Clear || gm.currentState == GameManager.State.Fail) //Empties the potion after finishing the level
-            emptyPotion();
+        if (filled && gm.currentState == GameManager.State.Brewing && !potionBtns.activeInHierarchy) //Shows buttons when potion has been made
+            potionBtns.SetActive(true);
+        else if ((!filled || gm.currentState != GameManager.State.Brewing) && potionBtns.activeInHierarchy) //Hides buttons when potion has not been made orr when in a different state
+            potionBtns.SetActive(false);
     }
     /*
     private void OnMouseEnter()
