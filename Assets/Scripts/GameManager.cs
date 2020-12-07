@@ -190,7 +190,7 @@ public class GameManager : MonoBehaviour
                 blockButtons = true;
                 pauseBtn.interactable = false;
                 GameObject.Find("ClearScreenText").GetComponent<Text>().text = lvlManager.activeLevel.LevelCompleteText;
-                audioManager.SetBGMVolume(0.1f);
+                audioManager.SetBGMVolume(0.2f);
                 audioManager.PlayBGM(2);
                 break;
             case State.Fail:
@@ -206,7 +206,7 @@ public class GameManager : MonoBehaviour
                 blockButtons = true;
                 pauseBtn.interactable = false;
                 GameObject.Find("FailScreenText").GetComponent<Text>().text = lvlManager.activeLevel.LevelFailedText;
-                audioManager.SetBGMVolume(0.1f);
+                audioManager.SetBGMVolume(0.15f);
                 audioManager.PlayBGM(3);
                 break;
             default:
@@ -253,7 +253,7 @@ public class GameManager : MonoBehaviour
         currentState = ChangeGameState(prePauseState);
     }
 
-    public void RestartLevel()
+    public void ResetLevel()
     {
         brewingObjs.GetComponentInChildren<PotionManager>().emptyPotion();
         brewingObjs.GetComponentInChildren<CauldronManager>().EmptyCauldron();
@@ -263,6 +263,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+
+        audioManager.SetBGMVolume(0.1f);
+        audioManager.PlayBGM(0);
     }
 
     public void LevelButton(int levelID)
@@ -270,7 +273,7 @@ public class GameManager : MonoBehaviour
         lvlManager.activeLevel = lvlManager.levels[levelID];
         currentState = ChangeGameState(State.Brewing);
         GameObject.Find("DialogueBoxText").GetComponent<Text>().text = lvlManager.activeLevel.LevelText;
-        RestartLevel();
+        ResetLevel();
     }
 
     public void switchScene(string sceneName)
