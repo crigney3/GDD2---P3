@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour
             "You'll be going up against a Naga this mission. They're like a werewolf, but instead of a wolf they turn into a snake. Make sure you don't get poisoned, I don't want to be left in this basement forever.",
             "I'm gonna assume that the black veins spreading throughout your body mean you made the wrong potion. You mind freeing me before you die?",
             "Wow, Naga heads made really good decorations!"));
-        levels.Add(new LevelObject(INGREDIENT_TAG.Clear,
+        levels.Add(new LevelObject(INGREDIENT_TAG.Travel,
             "I can't really think of any way to beat a demon, so you might want to have a good way to escape instead of fighting this time.",
             "Dresden? Hellooooo, anyone there? Crap, if he's dead I'm stuck here forever.",
             "Hey, looks like you got away! Please tell me it didn't track you here. I definitely can't fight a demon."));

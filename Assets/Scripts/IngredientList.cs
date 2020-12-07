@@ -243,7 +243,7 @@ public class IngredientList : MonoBehaviour
 
         newIngredient = new Ingredient();
         newIngredient.Init(ingredientCount, "Scented Oils", currentCat, new List<INGREDIENT_TAG>()
-        { INGREDIENT_TAG.Clear, INGREDIENT_TAG.Space});
+        { INGREDIENT_TAG.Clear, INGREDIENT_TAG.Space, INGREDIENT_TAG.RemediesRough});
         ingredients.Add(newIngredient);
         ingredientCount++;
 
@@ -540,7 +540,7 @@ public class IngredientList : MonoBehaviour
 
         //return the type of tag that there is the most of, minimum of 6
         INGREDIENT_TAG returnTag = INGREDIENT_TAG.Botched;
-        int returnCount = 5;
+        int returnCount = 4;
         foreach(KeyValuePair<INGREDIENT_TAG, int> t in numberTags)
 		{
             if(t.Value > returnCount)
